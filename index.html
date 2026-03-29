@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScentMatch</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #0d0d12;
+    color: #fff;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 2.8rem;
+}
+
+.sub {
+    color: #aaa;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
+}
+
+select, button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+}
+
+select {
+    background: #1a1a22;
+    color: white;
+}
+
+button {
+    background: linear-gradient(135deg, #00f0ff, #ff00aa);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card {
+    background: #16161f;
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.tag {
+    display: inline-block;
+    background: #222;
+    padding: 5px 10px;
+    border-radius: 8px;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+</style>
+</head>
+
+<body>
+
+<h1>ScentMatch 💨</h1>
+<p class="sub">Find a scent that actually fits your vibe</p>
+
+<div class="container">
+
+<select id="occasion">
+    <option value="">Where are you going?</option>
+    <option value="school">School</option>
+    <option value="gym">Gym</option>
+    <option value="date">Date / Hangout</option>
+</select>
+
+<select id="budget">
+    <option value="">Budget?</option>
+    <option value="cheap">Under $50</option>
+    <option value="mid">$50–$100</option>
+    <option value="high">$100+</option>
+</select>
+
+<button onclick="findCologne()">Find My Scent</button>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+const data = [
+    {
+        name: "Nautica Voyage",
+        occasion: "school",
+        budget: "cheap",
+        vibe: "Clean 🌊",
+        why: "Super fresh and easy to wear. You can throw this on anytime and it just works.",
+        dupe: "Versace Man Eau Fraiche vibe"
+    },
+    {
+        name: "Afnan 9PM",
+        occasion: "date",
+        budget: "cheap",
+        vibe: "Sweet 🍬",
+        why: "Strong and attention-grabbing. This one gets compliments, especially at night.",
+        dupe: "JPG Ultra Male"
+    },
+    {
+        name: "Dior Sauvage",
+        occasion: "school",
+        budget: "high",
+        vibe: "Confident 💼",
+        why: "Mass appealing and works almost anywhere. Safe but still stands out.",
+        dupe: "Armaf Ventana"
+    },
+    {
+        name: "Versace Eros",
+        occasion: "date",
+        budget: "mid",
+        vibe: "Loud 🔥",
+        why: "Very noticeable and sweet. Perfect if you want people to smell you.",
+        dupe: "Cuba Gold"
+    },
+    {
+        name: "Davidoff Cool Water",
+        occasion: "gym",
+        budget: "cheap",
+        vibe: "Fresh 💧",
+        why: "Light and refreshing. Perfect for the gym or after a workout.",
+        dupe: "Green Irish Tweed vibe"
+    }
+];
+
+function findCologne() {
+    const occ = document.getElementById("occasion").value;
+    const bud = document.getElementById("budget").value;
+
+    const resultDiv = document.getElementById("result");
+
+    if (!occ || !bud) {
+        resultDiv.innerHTML = `<div class="card">Pick both options first 👀</div>`;
+        return;
+    }
+
+    const match = data.find(c => c.occasion === occ && c.budget === bud);
+
+    if (match) {
+        resultDiv.innerHTML = `
+            <div class="card">
+                <h2>${match.name}</h2>
+                <p><strong>Vibe:</strong> ${match.vibe}</p>
+                <p><strong>Why this works:</strong> ${match.why}</p>
+                <p><strong>Dupe:</strong> ${match.dupe}</p>
+            </div>
+        `;
+    } else {
+        resultDiv.innerHTML = `
+            <div class="card">
+                Still building this out 👀 more scents coming soon
+            </div>
+        `;
+    }
+}
+</script>
+
+</body>
+</html>
