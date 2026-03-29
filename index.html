@@ -22,26 +22,22 @@ h1 {
     font-size: 3rem;
 }
 
-.sub {
-    color: #aaa;
-}
-
 .container {
     max-width: 600px;
     margin: auto;
     padding: 20px;
 }
 
-select, button {
+select, button, input {
     width: 100%;
     padding: 14px;
-    margin-top: 12px;
+    margin-top: 10px;
     border-radius: 12px;
     border: none;
     font-size: 1rem;
 }
 
-select {
+select, input {
     background: #1a1a22;
     color: white;
 }
@@ -62,8 +58,8 @@ button {
 
 .section-title {
     margin-top: 40px;
-    font-weight: bold;
     color: #00f0ff;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -72,132 +68,130 @@ button {
 
 <div class="header">
 <h1>ScentMatch 💨</h1>
-<p class="sub">Find a scent that actually fits your vibe</p>
+<p>Find your perfect cologne</p>
 </div>
 
 <div class="container">
 
+<input type="text" id="search" placeholder="Search cologne..." oninput="searchCologne()">
+
 <select id="occasion">
-<option value="">Where are you going?</option>
+<option value="">Occasion</option>
 <option value="school">School</option>
 <option value="gym">Gym</option>
 <option value="date">Date</option>
+</select>
 
+<select id="budget">
+<option value="">Budget</option>
+<option value="cheap">Under $50</option>
+<option value="mid">$50–$100</option>
+<option value="high">$100+</option>
 </select>
 
 <select id="vibe">
+<option value="">Vibe</option>
 <option value="Fresh">Fresh</option>
 <option value="Sweet">Sweet</option>
 <option value="Dark">Dark</option>
 <option value="Clean">Clean</option>
-
-</select>
-
-<button onclick="clearHistory()">Clear History</button>
-</select>
-
-<select id="budget">
-<option value="">Budget?</option>
-<option value="cheap">Under $50</option>
-<option value="mid">$50–$100</option>
-<option value="high">$100+</option>
+<option value="Warm">Warm</option>
 </select>
 
 <button onclick="findCologne()">Find My Scent</button>
 
 <div id="result"></div>
 
-<div class="section-title">🔥 Top Picks</div>
-<div id="topPicks"></div>
+<div class="section-title">🔥 Top Rated</div>
+<div id="top"></div>
 
-<div class="section-title">🕒 Recently Generated</div>
+<div class="section-title">🕒 History</div>
 <div id="history"></div>
 
 </div>
 
 <script>
 const data = [
-{name:"Acqua di Gio Profumo",occasion:"school",budget:"high",vibe:"Fresh 🌊",why:"Clean and masculine",dupe:"Armaf Tres Nuit"},
-{name:"Jean Paul Gaultier Le Male",occasion:"date",budget:"mid",vibe:"Sweet 🍬",why:"Classic compliment getter",dupe:"Cuba Gold"},
-{name:"Spicebomb Extreme",occasion:"date",budget:"high",vibe:"Warm 🔥",why:"Strong winter scent",dupe:"Cremo Spice & Black Vanilla"},
-{name:"Tom Ford Noir Extreme",occasion:"date",budget:"high",vibe:"Dark 🥃",why:"Luxury vibe",dupe:"Maison Alhambra Noir"},
-{name:"Davidoff Cool Water Intense",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",why:"Strong aquatic scent",dupe:"Nautica Blue"},
-{name:"Paco Rabanne 1 Million",occasion:"date",budget:"mid",vibe:"Sweet 🔥",why:"Very popular club scent",dupe:"Club de Nuit Urban Man"},
-{name:"Versace Dylan Blue",occasion:"school",budget:"mid",vibe:"Clean 🌍",why:"Very versatile",dupe:"Armaf Blue Homme"},
-{name:"Bvlgari Man in Black",occasion:"date",budget:"high",vibe:"Dark 🥃",why:"Spicy and bold",dupe:"Bentley Intense"},
-{name:"YSL La Nuit de L'Homme",occasion:"date",budget:"high",vibe:"Smooth 🌙",why:"Perfect date scent",dupe:"Guess Seductive Homme"},
-{name:"Abercrombie Fierce",occasion:"school",budget:"mid",vibe:"Clean 🍃",why:"Mall classic scent",dupe:"Montblanc Legend"},
-{name:"Montblanc Legend Spirit",occasion:"gym",budget:"mid",vibe:"Fresh 💧",why:"Light and sporty",dupe:"Invictus Aqua"},
-{name:"Issey Miyake L'eau d'Issey",occasion:"school",budget:"mid",vibe:"Fresh 🌊",why:"Unique watery scent",dupe:"Armaf Tres Nuit"},
-{name:"Chanel Allure Homme Sport",occasion:"gym",budget:"high",vibe:"Sporty 🏃",why:"Fresh and classy",dupe:"Missoni Wave"},
-{name:"Hugo Boss Bottled",occasion:"school",budget:"mid",vibe:"Warm 🍎",why:"Everyday safe scent",dupe:"Zara Warm Black"},
-{name:"Azzaro Wanted",occasion:"date",budget:"mid",vibe:"Sweet 🔥",why:"Party scent",dupe:"Guess Seductive"},
-{name:"Burberry Touch",occasion:"school",budget:"cheap",vibe:"Clean 🍃",why:"Simple and fresh",dupe:"CK One"},
-{name:"CK Eternity",occasion:"school",budget:"cheap",vibe:"Fresh 🌿",why:"Classic daily scent",dupe:"Zara Fresh"},
-{name:"Armani Code",occasion:"date",budget:"high",vibe:"Dark 🌙",why:"Elegant night scent",dupe:"Jaguar Classic Black"},
-{name:"Lattafa Asad",occasion:"date",budget:"cheap",vibe:"Dark 🔥",why:"Strong and spicy",dupe:"Dior Sauvage Elixir"},
-{name:"Maison Alhambra Kismet Angel",occasion:"date",budget:"cheap",vibe:"Sweet 🍯",why:"Luxury smell cheap",dupe:"Angels Share"},
-{name:"Rasasi Daarej",occasion:"date",budget:"cheap",vibe:"Warm 🔥",why:"Underrated gem",dupe:"Valentino Uomo"},
-{name:"Ferrari Black",occasion:"date",budget:"cheap",vibe:"Dark 🖤",why:"Budget night scent",dupe:"Armani Code"},
-{name:"Zara Seoul",occasion:"school",budget:"cheap",vibe:"Fresh 🌊",why:"Cheap daily wear",dupe:"Versace Pour Homme"},
-{name:"Versace Pour Homme",occasion:"school",budget:"mid",vibe:"Clean 🌊",why:"Very fresh",dupe:"Zara Seoul"},
-{name:"Coach for Men",occasion:"school",budget:"mid",vibe:"Fresh 🍃",why:"Modern clean scent",dupe:"Montblanc Explorer"},
-{name:"Prada Luna Rossa Carbon",occasion:"school",budget:"high",vibe:"Clean ⚡",why:"Smooth and modern",dupe:"Dior Sauvage"},
-{name:"Dolce & Gabbana Light Blue",occasion:"gym",budget:"mid",vibe:"Fresh 🍋",why:"Summer scent",dupe:"Nautica Voyage"},
-{name:"D&G The One",occasion:"date",budget:"high",vibe:"Warm 🥃",why:"Amazing smell",dupe:"Zara Rich Warm Addictive"},
-{name:"Zara Rich Warm Addictive",occasion:"date",budget:"cheap",vibe:"Sweet 🍯",why:"Cheap and good",dupe:"D&G The One"},
-{name:"Givenchy Gentleman",occasion:"date",budget:"high",vibe:"Smooth 🧥",why:"Classy scent",dupe:"Bentley Absolute"}
+{name:"Dior Sauvage",occasion:"school",budget:"high",vibe:"Fresh 🌊",rating:4.7,why:"Mass appealing",dupe:"Ventana"},
+{name:"Versace Eros",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.6,why:"Attention grabbing",dupe:"Cuba Gold"},
+{name:"Nautica Voyage",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.3,why:"Great daily",dupe:"Cool Water"},
+{name:"Afnan 9PM",occasion:"date",budget:"cheap",vibe:"Sweet 🍬",rating:4.5,why:"Compliment magnet",dupe:"Ultra Male"},
+{name:"Bleu de Chanel",occasion:"school",budget:"high",vibe:"Clean 🧥",rating:4.8,why:"Very versatile",dupe:"Armaf Blue"},
+{name:"Montblanc Explorer",occasion:"school",budget:"mid",vibe:"Clean 🌍",rating:4.4,why:"Safe option",dupe:"Aventus"},
+{name:"Club de Nuit Intense",occasion:"date",budget:"cheap",vibe:"Dark 🌑",rating:4.6,why:"Strong scent",dupe:"Aventus"},
+{name:"Invictus",occasion:"gym",budget:"mid",vibe:"Fresh 🏃",rating:4.5,why:"Sporty",dupe:"Hawas"},
+{name:"Spicebomb Extreme",occasion:"date",budget:"high",vibe:"Warm 🔥",rating:4.8,why:"Winter beast",dupe:"Cremo Spice"},
+{name:"YSL Y EDP",occasion:"school",budget:"high",vibe:"Fresh ⚡",rating:4.7,why:"Modern",dupe:"Fakhar"},
+{name:"Hawas Rasasi",occasion:"gym",budget:"mid",vibe:"Sweet 🌊",rating:4.6,why:"Strong projection",dupe:"Invictus Aqua"},
+{name:"Bentley Intense",occasion:"date",budget:"mid",vibe:"Dark 🥃",rating:4.5,why:"Luxury smell",dupe:"Spicebomb vibe"},
+{name:"CK One",occasion:"gym",budget:"cheap",vibe:"Clean 💧",rating:4.2,why:"Simple",dupe:"Zara Fresh"},
+{name:"D&G The One",occasion:"date",budget:"high",vibe:"Warm 🥃",rating:4.7,why:"Amazing scent",dupe:"Zara Warm"},
+{name:"Versace Dylan Blue",occasion:"school",budget:"mid",vibe:"Clean 🌊",rating:4.5,why:"Versatile",dupe:"Blue Homme"}
 ];
 
 let history = [];
 
+function display(items) {
+document.getElementById("result").innerHTML = items.map(i => `
+<div class="card">
+<h2>${i.name}</h2>
+<p><strong>Rating:</strong> ⭐ ${i.rating}</p>
+<p><strong>Vibe:</strong> ${i.vibe}</p>
+<p>${i.why}</p>
+<p><strong>Dupe:</strong> ${i.dupe}</p>
+</div>
+`).join('');
+}
+
 function findCologne() {
 const occ = document.getElementById("occasion").value;
 const bud = document.getElementById("budget").value;
+const vibe = document.getElementById("vibe").value;
 
-if (!occ || !bud) {
-document.getElementById("result").innerHTML = `<div class="card">Pick both options first 👀</div>`;
+let filtered = data;
+
+if (occ) filtered = filtered.filter(c => c.occasion === occ);
+if (bud) filtered = filtered.filter(c => c.budget === bud);
+if (vibe) filtered = filtered.filter(c => c.vibe.includes(vibe));
+
+if (filtered.length === 0) {
+document.getElementById("result").innerHTML = `<div class="card">No matches yet 👀</div>`;
 return;
 }
 
-const matches = data.filter(c => c.occasion === occ && c.budget === bud);
-
-if (matches.length > 0) {
-const random = matches[Math.floor(Math.random() * matches.length)];
-
+const random = filtered[Math.floor(Math.random() * filtered.length)];
 history.unshift(random);
 updateHistory();
 
-document.getElementById("result").innerHTML = `
-<div class="card">
-<h2>${random.name}</h2>
-<p><strong>Vibe:</strong> ${random.vibe}</p>
-<p><strong>Why:</strong> ${random.why}</p>
-<p><strong>Dupe:</strong> ${random.dupe}</p>
-</div>`;
-} else {
-document.getElementById("result").innerHTML = `<div class="card">More coming soon 👀</div>`;
-}
+display([random]);
 }
 
-function loadTopPicks() {
-const picks = data.slice(0,4);
-document.getElementById("topPicks").innerHTML = picks.map(p => `
-<div class="card">
-<h3>${p.name}</h3>
-<p>${p.vibe}</p>
-</div>`).join('');
+function searchCologne() {
+const input = document.getElementById("search").value.toLowerCase();
+const results = data.filter(c => c.name.toLowerCase().includes(input));
+display(results);
 }
 
 function updateHistory() {
 document.getElementById("history").innerHTML = history.slice(0,5).map(h => `
 <div class="card">
 <h4>${h.name}</h4>
-<p>${h.vibe}</p>
-</div>`).join('');
+<p>⭐ ${h.rating}</p>
+</div>
+`).join('');
 }
 
-loadTopPicks();
+function loadTop() {
+const sorted = [...data].sort((a,b) => b.rating - a.rating).slice(0,3);
+document.getElementById("top").innerHTML = sorted.map(t => `
+<div class="card">
+<h3>${t.name}</h3>
+<p>⭐ ${t.rating}</p>
+</div>
+`).join('');
+}
+
+loadTop();
 </script>
 
 </body>
