@@ -7,96 +7,49 @@
 
 <style>
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: Arial;
   background: #0a0a0f;
   color: white;
-  margin: 0;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  background: linear-gradient(90deg,#00f0ff,#ff00aa);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 .controls {
   display: flex;
   gap: 10px;
   justify-content: center;
-  margin-bottom: 25px;
-  flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 select, input {
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: none;
-  background: #12121a;
-  color: white;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 15px;
 }
 
 .card {
   background: #12121a;
-  border-radius: 16px;
-  padding: 15px;
-  transition: 0.3s;
-  border: 1px solid #1f1f2b;
+  padding: 10px;
+  border-radius: 10px;
 }
+</style>
+</head>
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 30px rgba(0,240,255,0.2);
-}
+<body>
 
-.card img {
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  background: #0f0f16;
-  border-radius: 12px;
-}
-
-.card h2 {
-  font-size: 1.1rem;
-  margin: 10px 0 5px;
-}
-
-.rating {
-  color: #00f0ff;
-  font-weight: bold;
-}
-
-.tag {
-  display: inline-block;
-  padding: 4px 8px;
-  border-radius: 8px;
-  font-size: 0.75rem;
-  margin-right: 5px;
-  background: #1a1a25;
-}
-
-.search {
-  width: 250px;
-}
-
-<div class="header">
 <h1>ScentMatch 💨</h1>
-<p>Find your perfect cologne</p>
-</div>
 
-<div class="container">
-
-<input class="search" placeholder="Search cologne..." oninput="searchData(this.value)">
+<div class="controls">
+<input id="search" placeholder="Search..." oninput="searchCologne()">
 
 <select id="occasion">
 <option value="">Occasion</option>
@@ -107,9 +60,9 @@ select, input {
 
 <select id="budget">
 <option value="">Budget</option>
-<option value="cheap">Under $50</option>
-<option value="mid">$50–$100</option>
-<option value="high">$100+</option>
+<option value="cheap">Cheap</option>
+<option value="mid">Mid</option>
+<option value="high">High</option>
 </select>
 
 <select id="vibe">
@@ -121,141 +74,83 @@ select, input {
 <option value="Warm">Warm</option>
 </select>
 
-<button onclick="findCologne()">Find My Scent</button>
-
-<div id="result"></div>
-
-<div class="section-title">🔥 Top Rated</div>
-<div id="top"></div>
-
-<div class="section-title">🕒 History</div>
-<div id="history"></div>
-
+<button onclick="findCologne()">Find</button>
 </div>
+
+<div id="result" class="grid"></div>
+
+<h2>🔥 Top Rated</h2>
+<div id="top" class="grid"></div>
+
+<h2>🕒 History</h2>
+<div id="history" class="grid"></div>
 
 <script>
 const data = [
-{name:"Dior Sauvage",occasion:"school",budget:"high",vibe:"Fresh 🌊",rating:4.7,why:"Mass appealing",dupe:"Ventana"},
-{name:"Versace Eros",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.6,why:"Attention grabbing",dupe:"Cuba Gold"},
-{name:"Nautica Voyage",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.3,why:"Great daily",dupe:"Cool Water"},
-{name:"Afnan 9PM",occasion:"date",budget:"cheap",vibe:"Sweet 🍬",rating:4.5,why:"Compliment magnet",dupe:"Ultra Male"},
-{name:"Bleu de Chanel",occasion:"school",budget:"high",vibe:"Clean 🧥",rating:4.8,why:"Very versatile",dupe:"Armaf Blue"},
-{name:"Montblanc Explorer",occasion:"school",budget:"mid",vibe:"Clean 🌍",rating:4.4,why:"Safe option",dupe:"Aventus"},
-{name:"Club de Nuit Intense",occasion:"date",budget:"cheap",vibe:"Dark 🌑",rating:4.6,why:"Strong scent",dupe:"Aventus"},
-{name:"Invictus",occasion:"gym",budget:"mid",vibe:"Fresh 🏃",rating:4.5,why:"Sporty",dupe:"Hawas"},
-{name:"Spicebomb Extreme",occasion:"date",budget:"high",vibe:"Warm 🔥",rating:4.8,why:"Winter beast",dupe:"Cremo Spice"},
-{name:"YSL Y EDP",occasion:"school",budget:"high",vibe:"Fresh ⚡",rating:4.7,why:"Modern",dupe:"Fakhar"},
-{name:"Hawas Rasasi",occasion:"gym",budget:"mid",vibe:"Sweet 🌊",rating:4.6,why:"Strong projection",dupe:"Invictus Aqua"},
-{name:"Bentley Intense",occasion:"date",budget:"mid",vibe:"Dark 🥃",rating:4.5,why:"Luxury smell",dupe:"Spicebomb vibe"},
-{name:"CK One",occasion:"gym",budget:"cheap",vibe:"Clean 💧",rating:4.2,why:"Simple",dupe:"Zara Fresh"},
-{name:"D&G The One",occasion:"date",budget:"high",vibe:"Warm 🥃",rating:4.7,why:"Amazing scent",dupe:"Zara Warm"},
-{name:"Versace Dylan Blue",occasion:"school",budget:"mid",vibe:"Clean 🌊",rating:4.5,why:"Versatile",dupe:"Blue Homme"}
-{name:"Prada L'Homme",occasion:"school",budget:"high",vibe:"Clean 🧼",rating:4.7,why:"Very clean and classy",dupe:"Armaf Hunter"},
-{name:"Maison Francis Kurkdjian Baccarat Rouge 540",occasion:"date",budget:"high",vibe:"Sweet 🍬",rating:4.9,why:"Luxury and unique",dupe:"Al Haramain Amber Oud Rouge"},
-{name:"Al Haramain Amber Oud Gold",occasion:"date",budget:"mid",vibe:"Sweet 🍍",rating:4.7,why:"Strong fruity scent",dupe:"Erba Pura"},
-{name:"Lattafa Fakhar Black",occasion:"school",budget:"cheap",vibe:"Fresh ⚡",rating:4.4,why:"Great YSL Y dupe",dupe:"YSL Y EDP"},
-{name:"Missoni Wave",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.6,why:"Fresh and smooth",dupe:"Chanel Allure Sport"},
-{name:"Chanel Platinum Egoiste",occasion:"school",budget:"high",vibe:"Clean 🧥",rating:4.6,why:"Barbershop fresh",dupe:"Armaf Legasi"},
-{name:"Armaf Legasi",occasion:"school",budget:"cheap",vibe:"Clean 🌿",rating:4.3,why:"Fresh and cheap",dupe:"Platinum Egoiste"},
-{name:"Versace Oud Noir",occasion:"date",budget:"high",vibe:"Dark 🖤",rating:4.5,why:"Smooth oud",dupe:"Oud Mood"},
-{name:"Lattafa Oud for Glory",occasion:"date",budget:"cheap",vibe:"Dark 🥃",rating:4.6,why:"Strong oud scent",dupe:"Initio Oud for Greatness"},
-{name:"Initio Oud for Greatness",occasion:"date",budget:"high",vibe:"Dark 🔥",rating:4.8,why:"Powerful luxury scent",dupe:"Oud for Glory"},
-{name:"Azzaro The Most Wanted",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.7,why:"Clubbing beast",dupe:"Lattafa Ramz Silver"},
-{name:"Lattafa Ramz Silver",occasion:"date",budget:"cheap",vibe:"Sweet 🍬",rating:4.4,why:"Budget beast",dupe:"Ultra Male"},
-{name:"Ferragamo Uomo",occasion:"date",budget:"mid",vibe:"Warm ☕",rating:4.5,why:"Coffee vibe",dupe:"Halloween Man X"},
-{name:"Halloween Man X",occasion:"date",budget:"cheap",vibe:"Warm ☕",rating:4.4,why:"Coffee scent cheap",dupe:"Ferragamo Uomo"},
-{name:"Ralph Lauren Polo Blue",occasion:"gym",budget:"mid",vibe:"Fresh 💧",rating:4.3,why:"Light and clean",dupe:"Nautica Voyage"},
-{name:"Ralph Lauren Polo Red",occasion:"date",budget:"mid",vibe:"Sweet 🍒",rating:4.4,why:"Fruity and bold",dupe:"Ferrari Red"},
-{name:"Ferrari Red",occasion:"date",budget:"cheap",vibe:"Sweet 🍓",rating:4.2,why:"Cheap fruity scent",dupe:"Polo Red"},
-{name:"John Varvatos Artisan",occasion:"school",budget:"mid",vibe:"Fresh 🍊",rating:4.4,why:"Citrus scent",dupe:"Zara Vibrant Leather"},
-{name:"Zara Vibrant Leather",occasion:"school",budget:"cheap",vibe:"Clean 🍃",rating:4.3,why:"Cheap Aventus vibe",dupe:"Aventus"},
-{name:"Creed Aventus",occasion:"date",budget:"high",vibe:"Clean 🍍",rating:4.9,why:"Legendary scent",dupe:"Club de Nuit Intense"},
-{name:"Maison Alhambra Porto Neroli",occasion:"gym",budget:"cheap",vibe:"Fresh 🍋",rating:4.3,why:"Summer fresh",dupe:"Neroli Portofino"},
-{name:"Tom Ford Neroli Portofino",occasion:"gym",budget:"high",vibe:"Fresh 🍋",rating:4.7,why:"Luxury summer scent",dupe:"Porto Neroli"},
-{name:"Davidoff Zino",occasion:"school",budget:"cheap",vibe:"Clean 🌿",rating:4.2,why:"Old school classic",dupe:"Polo Green"},
-{name:"Polo Green",occasion:"school",budget:"mid",vibe:"Dark 🌲",rating:4.3,why:"Classic masculine",dupe:"Zino"},
-{name:"Givenchy Pi",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.4,why:"Vanilla scent",dupe:"Zara Gold"},
-{name:"Zara Gold",occasion:"date",budget:"cheap",vibe:"Sweet 🍯",rating:4.2,why:"Cheap vanilla",dupe:"Givenchy Pi"},
-{name:"Maison Margiela Jazz Club",occasion:"date",budget:"high",vibe:"Warm 🥃",rating:4.7,why:"Boozy scent",dupe:"Bentley Intense"},
-{name:"Maison Margiela By the Fireplace",occasion:"date",budget:"high",vibe:"Warm 🔥",rating:4.8,why:"Cozy scent",dupe:"Ameer Al Oudh"},
-{name:"Lattafa Ameer Al Oudh",occasion:"date",budget:"cheap",vibe:"Warm 🔥",rating:4.5,why:"Smoky sweet",dupe:"By the Fireplace"},
-{name:"Burberry Hero",occasion:"school",budget:"mid",vibe:"Clean 🌲",rating:4.5,why:"Modern scent",dupe:"Explorer"},
-{name:"Gucci Guilty",occasion:"date",budget:"mid",vibe:"Warm 🌙",rating:4.4,why:"Night scent",dupe:"Guess Seductive"},
-{name:"Guess Seductive Noir",occasion:"date",budget:"cheap",vibe:"Dark 🌑",rating:4.3,why:"Cheap night scent",dupe:"Gucci Guilty"},
-{name:"Tom Ford Ombre Leather",occasion:"date",budget:"high",vibe:"Dark 🖤",rating:4.8,why:"Leather scent",dupe:"Rare Carbon"},
-{name:"Maison Alhambra Rare Carbon",occasion:"date",budget:"cheap",vibe:"Dark 🖤",rating:4.5,why:"Leather cheap",dupe:"Ombre Leather"},
-{name:"Dunhill Icon",occasion:"school",budget:"mid",vibe:"Clean 🧥",rating:4.4,why:"Office scent",dupe:"Prada L'Homme"},
-{name:"Jimmy Choo Man Blue",occasion:"school",budget:"mid",vibe:"Fresh 🌊",rating:4.3,why:"Casual scent",dupe:"Dylan Blue"},
-{name:"BOSS The Scent",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.4,why:"Attractive scent",dupe:"Ferragamo Uomo"},
-{name:"Armaf Hunter Intense",occasion:"school",budget:"cheap",vibe:"Fresh 🍃",rating:4.4,why:"Versatile cheap",dupe:"Invictus + Sauvage"},
-{name:"Lattafa Najdia",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.3,why:"Cheap sporty",dupe:"Invictus"},
-{name:"Al Haramain Detour Noir",occasion:"date",budget:"mid",vibe:"Warm 🍎",rating:4.6,why:"Sweet spicy",dupe:"Layton"},
-{name:"Parfums de Marly Layton",occasion:"date",budget:"high",vibe:"Warm 🍏",rating:4.9,why:"Luxury scent",dupe:"Detour Noir"},
-{name:"Versace Man Eau Fraiche",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.5,why:"Super fresh",dupe:"Nautica Voyage"},
-{name:"Nautica Blue",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.2,why:"Budget fresh",dupe:"Cool Water"},
-{name:"Calvin Klein Defy",occasion:"school",budget:"mid",vibe:"Fresh ⚡",rating:4.3,why:"Modern fresh",dupe:"YSL Y"},
-{name:"YSL L'Homme",occasion:"school",budget:"high",vibe:"Clean 🧥",rating:4.6,why:"Smooth scent",dupe:"Zara Seoul"}
-{name:"Initio Side Effect",occasion:"date",budget:"high",vibe:"Sweet 🍯",rating:4.9,why:"Very addictive",dupe:"Khamrah",image:"https://via.placeholder.com/300"},
-{name:"Lattafa Khamrah",occasion:"date",budget:"cheap",vibe:"Sweet 🍯",rating:4.7,why:"Beast mode scent",dupe:"Angels Share",image:"https://via.placeholder.com/300"},
-{name:"Xerjoff Naxos",occasion:"date",budget:"high",vibe:"Warm 🍯",rating:4.9,why:"Luxury honey tobacco",dupe:"Insurrection II",image:"https://via.placeholder.com/300"},
-{name:"Insurrection II Wild",occasion:"date",budget:"cheap",vibe:"Warm 🍯",rating:4.5,why:"Naxos style",dupe:"Naxos",image:"https://via.placeholder.com/300"},
-{name:"Creed Silver Mountain Water",occasion:"school",budget:"high",vibe:"Fresh ❄️",rating:4.7,why:"Unique fresh scent",dupe:"Club de Nuit Sillage",image:"https://via.placeholder.com/300"},
-{name:"Club de Nuit Sillage",occasion:"school",budget:"cheap",vibe:"Fresh ❄️",rating:4.5,why:"Great SMW dupe",dupe:"SMW",image:"https://via.placeholder.com/300"},
-{name:"Mancera Cedrat Boise",occasion:"school",budget:"mid",vibe:"Fresh 🍋",rating:4.7,why:"Citrus fruity",dupe:"Aventus style",image:"https://via.placeholder.com/300"},
-{name:"Maison Alhambra Lovely Cherie",occasion:"date",budget:"cheap",vibe:"Sweet 🍒",rating:4.4,why:"Cherry scent",dupe:"Lost Cherry",image:"https://via.placeholder.com/300"},
-{name:"Tom Ford Lost Cherry",occasion:"date",budget:"high",vibe:"Sweet 🍒",rating:4.8,why:"Luxury cherry scent",dupe:"Lovely Cherie",image:"https://via.placeholder.com/300"},
-{name:"Lattafa Qaed Al Fursan",occasion:"date",budget:"cheap",vibe:"Sweet 🍍",rating:4.5,why:"Pineapple bomb",dupe:"Aventus",image:"https://via.placeholder.com/300"},
-{name:"Rasasi Hawas Ice",occasion:"gym",budget:"mid",vibe:"Fresh ❄️",rating:4.6,why:"Icy fresh",dupe:"Invictus Aqua",image:"https://via.placeholder.com/300"},
-{name:"Al Haramain L'Aventure",occasion:"school",budget:"mid",vibe:"Clean 🍍",rating:4.5,why:"Aventus vibe",dupe:"Aventus",image:"https://via.placeholder.com/300"},
-{name:"Armaf Milestone",occasion:"gym",budget:"cheap",vibe:"Fresh 🌊",rating:4.4,why:"Summer scent",dupe:"Millesime Imperial",image:"https://via.placeholder.com/300"},
-{name:"Creed Millesime Imperial",occasion:"gym",budget:"high",vibe:"Fresh 🌊",rating:4.7,why:"Luxury aquatic",dupe:"Milestone",image:"https://via.placeholder.com/300"},
-{name:"Lattafa Badee Al Oud",occasion:"date",budget:"cheap",vibe:"Dark 🖤",rating:4.6,why:"Strong oud",dupe:"Oud for Greatness",image:"https://via.placeholder.com/300"},
-{name:"Maison Alhambra Tobacco Touch",occasion:"date",budget:"cheap",vibe:"Warm 🚬",rating:4.5,why:"Tobacco scent",dupe:"Tobacco Vanille",image:"https://via.placeholder.com/300"},
-{name:"Tom Ford Tobacco Vanille",occasion:"date",budget:"high",vibe:"Warm 🚬",rating:4.9,why:"Luxury tobacco",dupe:"Tobacco Touch",image:"https://via.placeholder.com/300"},
-{name:"Afnan Supremacy Not Only Intense",occasion:"date",budget:"mid",vibe:"Clean 🍍",rating:4.7,why:"Strong Aventus type",dupe:"Aventus",image:"https://via.placeholder.com/300"},
-{name:"Lattafa Najdia Tribute",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.3,why:"Sporty scent",dupe:"Invictus",image:"https://via.placeholder.com/300"},
-{name:"Zara Sunrise on the Red Sand Dunes",occasion:"gym",budget:"cheap",vibe:"Fresh 🍊",rating:4.4,why:"LV vibe",dupe:"Afternoon Swim",image:"https://via.placeholder.com/300"}
-// ===== RABANNE (PACO RABANNE) =====
-{name:"1 Million",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.6,why:"Bold and attention grabbing",dupe:"Club de Nuit Urban Man",image:"https://fimgs.net/mdimg/perfume/375x500.21.jpg"},
-{name:"1 Million Lucky",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Nutty sweet vibe",dupe:"Lattafa Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.50257.jpg"},
-{name:"1 Million Parfum",occasion:"date",budget:"mid",vibe:"Sweet ☀️",rating:4.5,why:"Creamy solar scent",dupe:"Ramz Gold",image:"https://fimgs.net/mdimg/perfume/375x500.64198.jpg"},
-{name:"1 Million Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🍎",rating:4.8,why:"Super strong and rich",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.73645.jpg"},
-{name:"Invictus",occasion:"gym",budget:"mid",vibe:"Fresh ⚡",rating:4.5,why:"Sporty fresh",dupe:"Lattafa Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.18471.jpg"},
-{name:"Invictus Aqua",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.7,why:"Summer beast",dupe:"Hawas",image:"https://fimgs.net/mdimg/perfume/375x500.39354.jpg"},
-{name:"Invictus Intense",occasion:"date",budget:"mid",vibe:"Warm 🔥",rating:4.6,why:"Darker Invictus",dupe:"Najdia Tribute",image:"https://fimgs.net/mdimg/perfume/375x500.39906.jpg"},
-{name:"Invictus Victory",occasion:"date",budget:"mid",vibe:"Sweet 🍫",rating:4.7,why:"Sweet vanilla bomb",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70977.jpg"},
-{name:"Invictus Victory Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.8,why:"Beast mode",dupe:"Lattafa Asad",image:"https://fimgs.net/mdimg/perfume/375x500.82018.jpg"},
-{name:"Phantom",occasion:"school",budget:"mid",vibe:"Sweet 🤖",rating:4.3,why:"Modern sweet scent",dupe:"Afnan 9PM",image:"https://fimgs.net/mdimg/perfume/375x500.68452.jpg"},
-{name:"Phantom Intense",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.5,why:"Night version",dupe:"9PM",image:"https://fimgs.net/mdimg/perfume/375x500.84893.jpg"},
-// ===== JEAN PAUL GAULTIER (JPG) =====
-{name:"Le Male",occasion:"school",budget:"mid",vibe:"Clean 🌿",rating:4.6,why:"Classic fresh",dupe:"Cuba Gold",image:"https://fimgs.net/mdimg/perfume/375x500.430.jpg"},
-{name:"Le Male Le Parfum",occasion:"date",budget:"mid",vibe:"Warm 🔥",rating:4.8,why:"Cardamom vanilla",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.61040.jpg"},
-{name:"Ultra Male",occasion:"date",budget:"mid",vibe:"Sweet 🍬",rating:4.8,why:"Loud and attractive",dupe:"9PM",image:"https://fimgs.net/mdimg/perfume/375x500.30947.jpg"},
-{name:"Le Beau",occasion:"gym",budget:"mid",vibe:"Fresh 🥥",rating:4.6,why:"Coconut fresh",dupe:"Lattafa Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.54761.jpg"},
-{name:"Le Beau Le Parfum",occasion:"date",budget:"mid",vibe:"Sweet 🥥",rating:4.7,why:"Stronger coconut",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.73597.jpg"},
-{name:"Scandal Pour Homme",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Honey sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70938.jpg"},
-{name:"Scandal Le Parfum",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.8,why:"Stronger version",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.83867.jpg"},
-{name:"Le Male Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.9,why:"VERY hyped scent",dupe:"Lattafa Asad",image:"https://fimgs.net/mdimg/perfume/375x500.82425.jpg"},
-{name:"Kokorico",occasion:"school",budget:"mid",vibe:"Dark 🌿",rating:4.2,why:"Unique cocoa vibe",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.13327.jpg"}
-// ===== ARMANI =====
-{name:"Acqua di Gio",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.6,why:"Classic aquatic",dupe:"Cool Water",image:"https://fimgs.net/mdimg/perfume/375x500.410.jpg"},
-{name:"Acqua di Gio Profumo",occasion:"date",budget:"high",vibe:"Dark 🌊",rating:4.9,why:"Smoky aquatic",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.29727.jpg"},
-{name:"Acqua di Gio Profondo",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.7,why:"Modern aquatic",dupe:"Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.59596.jpg"},
-{name:"Acqua di Gio Absolu",occasion:"date",budget:"mid",vibe:"Warm 🌊",rating:4.5,why:"Woody aquatic",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.52645.jpg"},
-{name:"Stronger With You",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Warm sweet scent",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.46390.jpg"},
-{name:"Stronger With You Intensely",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.8,why:"Very strong sweet",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.58283.jpg"},
-{name:"Stronger With You Absolutely",occasion:"date",budget:"mid",vibe:"Sweet 🥃",rating:4.8,why:"Boozy sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70868.jpg"},
-{name:"Armani Code",occasion:"date",budget:"mid",vibe:"Dark 🌙",rating:4.6,why:"Classic night scent",dupe:"Guess Seductive",image:"https://fimgs.net/mdimg/perfume/375x500.412.jpg"},
-{name:"Armani Code Profumo",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.7,why:"Warm amber",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.36398.jpg"},
-{name:"Armani Code Parfum",occasion:"date",budget:"mid",vibe:"Clean 🌙",rating:4.6,why:"Modern code",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.71978.jpg"},
+{name:"Dior Sauvage",occasion:"school",budget:"high",vibe:"Fresh",rating:4.7,why:"Mass appealing",dupe:"Ventana",image:"https://via.placeholder.com/200"},
+{name:"Versace Eros",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.6,why:"Attention grabbing",dupe:"Cuba Gold",image:"https://via.placeholder.com/200"},
+{name:"Nautica Voyage",occasion:"gym",budget:"cheap",vibe:"Fresh",rating:4.3,why:"Great daily",dupe:"Cool Water",image:"https://via.placeholder.com/200"},
+{name:"Afnan 9PM",occasion:"date",budget:"cheap",vibe:"Sweet",rating:4.5,why:"Compliment beast",dupe:"Ultra Male",image:"https://via.placeholder.com/200"}
 
-// ===== VALENTINO =====
-{name:"Valentino Uomo",occasion:"date",budget:"mid",vibe:"Warm ☕",rating:4.7,why:"Coffee chocolate vibe",dupe:"Ferragamo Uomo",image:"https://fimgs.net/mdimg/perfume/375x500.19558.jpg"},
-{name:"Valentino Uomo Intense",occasion:"date",budget:"mid",vibe:"Dark 🍫",rating:4.8,why:"Iris leather",dupe:"Dior Homme Intense",image:"https://fimgs.net/mdimg/perfume/375x500.38338.jpg"},
-{name:"Born in Roma Uomo",occasion:"school",budget:"mid",vibe:"Fresh 🌿",rating:4.6,why:"Modern versatile",dupe:"YSL Y",image:"https://fimgs.net/mdimg/perfume/375x500.55716.jpg"},
-{name:"Born in Roma Intense",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.8,why:"Night version",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.79126.jpg"},
-{name:"Born in Roma Coral Fantasy",occasion:"school",budget:"mid",vibe:"Fresh 🍎",rating:4.6,why:"Fruity fresh",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.73431.jpg"},
-{name:"Born in Roma Yellow Dream",occasion:"school",budget:"mid",vibe:"Fresh 🍋",rating:4.5,why:"Light citrus",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.68197.jpg"}
+/* ===== DESIGNERS ===== */
+{name:"Dior Sauvage",occasion:"school",budget:"high",vibe:"Fresh",rating:4.7,why:"Mass appealing",dupe:"Ventana",image:"https://via.placeholder.com/200"},
+{name:"Bleu de Chanel",occasion:"school",budget:"high",vibe:"Clean",rating:4.8,why:"Very versatile",dupe:"Armaf Blue",image:"https://via.placeholder.com/200"},
+{name:"YSL Y EDP",occasion:"school",budget:"high",vibe:"Fresh",rating:4.7,why:"Modern fresh",dupe:"Fakhar",image:"https://via.placeholder.com/200"},
+{name:"Prada L'Homme",occasion:"school",budget:"high",vibe:"Clean",rating:4.7,why:"Super clean",dupe:"Armaf Hunter",image:"https://via.placeholder.com/200"},
+{name:"Versace Dylan Blue",occasion:"school",budget:"mid",vibe:"Clean",rating:4.5,why:"Versatile",dupe:"Blue Homme",image:"https://via.placeholder.com/200"},
+
+/* ===== CHEAP BEASTS ===== */
+{name:"Nautica Voyage",occasion:"gym",budget:"cheap",vibe:"Fresh",rating:4.3,why:"Daily cheap fresh",dupe:"Cool Water",image:"https://via.placeholder.com/200"},
+{name:"Afnan 9PM",occasion:"date",budget:"cheap",vibe:"Sweet",rating:4.5,why:"Ultra Male dupe",dupe:"Ultra Male",image:"https://via.placeholder.com/200"},
+{name:"Lattafa Fakhar Black",occasion:"school",budget:"cheap",vibe:"Fresh",rating:4.4,why:"YSL Y dupe",dupe:"YSL Y",image:"https://via.placeholder.com/200"},
+{name:"Club de Nuit Intense",occasion:"date",budget:"cheap",vibe:"Dark",rating:4.6,why:"Aventus dupe",dupe:"Aventus",image:"https://via.placeholder.com/200"},
+{name:"Lattafa Khamrah",occasion:"date",budget:"cheap",vibe:"Sweet",rating:4.7,why:"Beast mode",dupe:"Angels Share",image:"https://via.placeholder.com/200"},
+
+/* ===== RABANNE ===== */
+{name:"1 Million",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.6,why:"Attention grabbing",dupe:"Urban Man",image:"https://fimgs.net/mdimg/perfume/375x500.21.jpg"},
+{name:"1 Million Lucky",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.7,why:"Nutty sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.50257.jpg"},
+{name:"1 Million Elixir",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.8,why:"Strong sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.73645.jpg"},
+{name:"Invictus",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.5,why:"Sporty fresh",dupe:"Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.18471.jpg"},
+{name:"Invictus Victory",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.7,why:"Vanilla bomb",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70977.jpg"},
+
+/* ===== JPG ===== */
+{name:"Le Male",occasion:"school",budget:"mid",vibe:"Clean",rating:4.6,why:"Classic fresh",dupe:"Cuba Gold",image:"https://fimgs.net/mdimg/perfume/375x500.430.jpg"},
+{name:"Le Male Le Parfum",occasion:"date",budget:"mid",vibe:"Warm",rating:4.8,why:"Cardamom vanilla",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.61040.jpg"},
+{name:"Ultra Male",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.8,why:"Loud sweet",dupe:"9PM",image:"https://fimgs.net/mdimg/perfume/375x500.30947.jpg"},
+{name:"Le Beau",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.6,why:"Coconut fresh",dupe:"Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.54761.jpg"},
+{name:"Le Male Elixir",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.9,why:"VERY hyped",dupe:"Asad",image:"https://fimgs.net/mdimg/perfume/375x500.82425.jpg"},
+
+/* ===== ARMANI ===== */
+{name:"Acqua di Gio",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.6,why:"Classic aquatic",dupe:"Cool Water",image:"https://fimgs.net/mdimg/perfume/375x500.410.jpg"},
+{name:"Acqua di Gio Profumo",occasion:"date",budget:"high",vibe:"Dark",rating:4.9,why:"Smoky aquatic",dupe:"None",image:"https://fimgs.net/mdimg/perfume/375x500.29727.jpg"},
+{name:"Stronger With You",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.7,why:"Warm sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.46390.jpg"},
+{name:"Stronger With You Intensely",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.8,why:"Very strong",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.58283.jpg"},
+{name:"Armani Code",occasion:"date",budget:"mid",vibe:"Dark",rating:4.6,why:"Night scent",dupe:"Guess Seductive",image:"https://fimgs.net/mdimg/perfume/375x500.412.jpg"},
+
+/* ===== VALENTINO ===== */
+{name:"Valentino Uomo",occasion:"date",budget:"mid",vibe:"Warm",rating:4.7,why:"Coffee vibe",dupe:"Ferragamo Uomo",image:"https://fimgs.net/mdimg/perfume/375x500.19558.jpg"},
+{name:"Valentino Uomo Intense",occasion:"date",budget:"mid",vibe:"Dark",rating:4.8,why:"Iris leather",dupe:"Dior Homme Intense",image:"https://fimgs.net/mdimg/perfume/375x500.38338.jpg"},
+{name:"Born in Roma Uomo",occasion:"school",budget:"mid",vibe:"Fresh",rating:4.6,why:"Modern",dupe:"YSL Y",image:"https://fimgs.net/mdimg/perfume/375x500.55716.jpg"},
+{name:"Born in Roma Intense",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.8,why:"Night version",dupe:"None",image:"https://fimgs.net/mdimg/perfume/375x500.79126.jpg"},
+
+/* ===== NICHE ===== */
+{name:"Creed Aventus",occasion:"date",budget:"high",vibe:"Clean",rating:4.9,why:"Legendary scent",dupe:"CDNIM",image:"https://fimgs.net/mdimg/perfume/375x500.9828.jpg"},
+{name:"Baccarat Rouge 540",occasion:"date",budget:"high",vibe:"Sweet",rating:4.9,why:"Luxury scent",dupe:"Amber Oud Rouge",image:"https://fimgs.net/mdimg/perfume/375x500.33519.jpg"},
+{name:"Xerjoff Naxos",occasion:"date",budget:"high",vibe:"Warm",rating:4.9,why:"Honey tobacco",dupe:"Insurrection II",image:"https://via.placeholder.com/200"},
+{name:"Parfums de Marly Layton",occasion:"date",budget:"high",vibe:"Warm",rating:4.9,why:"Apple vanilla",dupe:"Detour Noir",image:"https://via.placeholder.com/200"}
+  
+// ===== MORE ARMANI =====
+{name:"Acqua di Gio Essenza",occasion:"date",budget:"high",vibe:"Fresh",rating:4.8,why:"Stronger ADG",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Acqua di Gio EDT 2024",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.5,why:"Modern classic",dupe:"Cool Water",image:"https://via.placeholder.com/200"},
+{name:"Stronger With You Freeze",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.4,why:"Fresh SWY",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Stronger With You Only",occasion:"school",budget:"mid",vibe:"Fresh",rating:4.5,why:"Lighter version",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Armani Code Absolu",occasion:"date",budget:"mid",vibe:"Sweet",rating:4.7,why:"Vanilla tonka",dupe:"none",image:"https://via.placeholder.com/200"},
+
+// ===== MORE VALENTINO =====
+{name:"Born in Roma Green Stravaganza",occasion:"school",budget:"mid",vibe:"Fresh",rating:4.5,why:"Green fresh",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Born in Roma Rockstud Noir",occasion:"date",budget:"mid",vibe:"Dark",rating:4.4,why:"Dark twist",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Valentino Uomo Noir Absolu",occasion:"date",budget:"high",vibe:"Dark",rating:4.7,why:"Deep woody",dupe:"none",image:"https://via.placeholder.com/200"},
+{name:"Valentino Uomo Acqua",occasion:"gym",budget:"mid",vibe:"Fresh",rating:4.3,why:"Light version",dupe:"none",image:"https://via.placeholder.com/200"}
 ];
 
 let history = [];
@@ -263,70 +158,56 @@ let history = [];
 function display(items) {
 document.getElementById("result").innerHTML = items.map(i => `
 <div class="card">
-<img src="${i.image}" style="width:100%; border-radius:12px; margin-bottom:10px;">
-<h2>${i.name}</h2>
-<p><strong>Rating:</strong> ⭐ ${i.rating}</p>
-<p><strong>Vibe:</strong> ${i.vibe}</p>
+<img src="${i.image}" style="width:100%">
+<h3>${i.name}</h3>
+<p>⭐ ${i.rating}</p>
+<p>${i.vibe}</p>
 <p>${i.why}</p>
-<p><strong>Dupe:</strong> ${i.dupe}</p>
-</div>
-<p><strong>Rating:</strong> ⭐ ${i.rating}</p>
-<p><strong>Vibe:</strong> ${i.vibe}</p>
-<p>${i.why}</p>
-<p><strong>Dupe:</strong> ${i.dupe}</p>
 </div>
 `).join('');
 }
 
 function findCologne() {
+let filtered = data;
+
 const occ = document.getElementById("occasion").value;
 const bud = document.getElementById("budget").value;
 const vibe = document.getElementById("vibe").value;
 
-let filtered = data;
-
 if (occ) filtered = filtered.filter(c => c.occasion === occ);
 if (bud) filtered = filtered.filter(c => c.budget === bud);
-if (vibe) filtered = filtered.filter(c => c.vibe.includes(vibe));
+if (vibe) filtered = filtered.filter(c => c.vibe === vibe);
 
-if (filtered.length === 0) {
-document.getElementById("result").innerHTML = `<div class="card">No matches yet 👀</div>`;
-return;
-}
+if (filtered.length === 0) return;
 
-const random = filtered[Math.floor(Math.random() * filtered.length)];
-history.unshift(random);
+const pick = filtered[Math.floor(Math.random()*filtered.length)];
+history.unshift(pick);
+
+display([pick]);
 updateHistory();
-
-display([random]);
 }
 
 function searchCologne() {
-const input = document.getElementById("search").value.toLowerCase();
-const results = data.filter(c => c.name.toLowerCase().includes(input));
-display(results);
+const val = document.getElementById("search").value.toLowerCase();
+const res = data.filter(c => c.name.toLowerCase().includes(val));
+display(res);
 }
 
 function updateHistory() {
 document.getElementById("history").innerHTML = history.slice(0,5).map(h => `
-<div class="card">
-<h4>${h.name}</h4>
-<p>⭐ ${h.rating}</p>
-</div>
+<div class="card">${h.name}</div>
 `).join('');
 }
 
 function loadTop() {
-const sorted = [...data].sort((a,b) => b.rating - a.rating).slice(0,3);
-document.getElementById("top").innerHTML = sorted.map(t => `
-<div class="card">
-<h3>${t.name}</h3>
-<p>⭐ ${t.rating}</p>
-</div>
+const top = [...data].sort((a,b)=>b.rating-a.rating).slice(0,3);
+document.getElementById("top").innerHTML = top.map(t => `
+<div class="card">${t.name} ⭐${t.rating}</div>
 `).join('');
 }
 
 loadTop();
+display(data);
 </script>
 
 </body>
