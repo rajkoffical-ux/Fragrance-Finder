@@ -7,64 +7,87 @@
 
 <style>
 body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: #0d0d12;
-    color: white;
-}
-
-.header {
-    text-align: center;
-    padding: 40px 20px;
+  font-family: 'Inter', sans-serif;
+  background: #0a0a0f;
+  color: white;
+  margin: 0;
+  padding: 20px;
 }
 
 h1 {
-    font-size: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg,#00f0ff,#ff00aa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-}
-
-select, button, input {
-    width: 100%;
-    padding: 14px;
-    margin-top: 10px;
-    border-radius: 12px;
-    border: none;
-    font-size: 1rem;
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
 }
 
 select, input {
-    background: #1a1a22;
-    color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: #12121a;
+  color: white;
 }
 
-button {
-    background: linear-gradient(135deg, #00f0ff, #ff00aa);
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+  gap: 20px;
 }
 
 .card {
-    background: #16161f;
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 15px;
+  background: #12121a;
+  border-radius: 16px;
+  padding: 15px;
+  transition: 0.3s;
+  border: 1px solid #1f1f2b;
 }
 
-.section-title {
-    margin-top: 40px;
-    color: #00f0ff;
-    font-weight: bold;
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,240,255,0.2);
 }
-</style>
-</head>
 
-<body>
+.card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background: #0f0f16;
+  border-radius: 12px;
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 5px;
+}
+
+.rating {
+  color: #00f0ff;
+  font-weight: bold;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  margin-right: 5px;
+  background: #1a1a25;
+}
+
+.search {
+  width: 250px;
+}
 
 <div class="header">
 <h1>ScentMatch 💨</h1>
@@ -73,7 +96,7 @@ button {
 
 <div class="container">
 
-<input type="text" id="search" placeholder="Search cologne..." oninput="searchCologne()">
+<input class="search" placeholder="Search cologne..." oninput="searchData(this.value)">
 
 <select id="occasion">
 <option value="">Occasion</option>
@@ -192,6 +215,47 @@ const data = [
 {name:"Afnan Supremacy Not Only Intense",occasion:"date",budget:"mid",vibe:"Clean 🍍",rating:4.7,why:"Strong Aventus type",dupe:"Aventus",image:"https://via.placeholder.com/300"},
 {name:"Lattafa Najdia Tribute",occasion:"gym",budget:"cheap",vibe:"Fresh 💧",rating:4.3,why:"Sporty scent",dupe:"Invictus",image:"https://via.placeholder.com/300"},
 {name:"Zara Sunrise on the Red Sand Dunes",occasion:"gym",budget:"cheap",vibe:"Fresh 🍊",rating:4.4,why:"LV vibe",dupe:"Afternoon Swim",image:"https://via.placeholder.com/300"}
+// ===== RABANNE (PACO RABANNE) =====
+{name:"1 Million",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.6,why:"Bold and attention grabbing",dupe:"Club de Nuit Urban Man",image:"https://fimgs.net/mdimg/perfume/375x500.21.jpg"},
+{name:"1 Million Lucky",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Nutty sweet vibe",dupe:"Lattafa Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.50257.jpg"},
+{name:"1 Million Parfum",occasion:"date",budget:"mid",vibe:"Sweet ☀️",rating:4.5,why:"Creamy solar scent",dupe:"Ramz Gold",image:"https://fimgs.net/mdimg/perfume/375x500.64198.jpg"},
+{name:"1 Million Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🍎",rating:4.8,why:"Super strong and rich",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.73645.jpg"},
+{name:"Invictus",occasion:"gym",budget:"mid",vibe:"Fresh ⚡",rating:4.5,why:"Sporty fresh",dupe:"Lattafa Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.18471.jpg"},
+{name:"Invictus Aqua",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.7,why:"Summer beast",dupe:"Hawas",image:"https://fimgs.net/mdimg/perfume/375x500.39354.jpg"},
+{name:"Invictus Intense",occasion:"date",budget:"mid",vibe:"Warm 🔥",rating:4.6,why:"Darker Invictus",dupe:"Najdia Tribute",image:"https://fimgs.net/mdimg/perfume/375x500.39906.jpg"},
+{name:"Invictus Victory",occasion:"date",budget:"mid",vibe:"Sweet 🍫",rating:4.7,why:"Sweet vanilla bomb",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70977.jpg"},
+{name:"Invictus Victory Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.8,why:"Beast mode",dupe:"Lattafa Asad",image:"https://fimgs.net/mdimg/perfume/375x500.82018.jpg"},
+{name:"Phantom",occasion:"school",budget:"mid",vibe:"Sweet 🤖",rating:4.3,why:"Modern sweet scent",dupe:"Afnan 9PM",image:"https://fimgs.net/mdimg/perfume/375x500.68452.jpg"},
+{name:"Phantom Intense",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.5,why:"Night version",dupe:"9PM",image:"https://fimgs.net/mdimg/perfume/375x500.84893.jpg"},
+// ===== JEAN PAUL GAULTIER (JPG) =====
+{name:"Le Male",occasion:"school",budget:"mid",vibe:"Clean 🌿",rating:4.6,why:"Classic fresh",dupe:"Cuba Gold",image:"https://fimgs.net/mdimg/perfume/375x500.430.jpg"},
+{name:"Le Male Le Parfum",occasion:"date",budget:"mid",vibe:"Warm 🔥",rating:4.8,why:"Cardamom vanilla",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.61040.jpg"},
+{name:"Ultra Male",occasion:"date",budget:"mid",vibe:"Sweet 🍬",rating:4.8,why:"Loud and attractive",dupe:"9PM",image:"https://fimgs.net/mdimg/perfume/375x500.30947.jpg"},
+{name:"Le Beau",occasion:"gym",budget:"mid",vibe:"Fresh 🥥",rating:4.6,why:"Coconut fresh",dupe:"Lattafa Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.54761.jpg"},
+{name:"Le Beau Le Parfum",occasion:"date",budget:"mid",vibe:"Sweet 🥥",rating:4.7,why:"Stronger coconut",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.73597.jpg"},
+{name:"Scandal Pour Homme",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Honey sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70938.jpg"},
+{name:"Scandal Le Parfum",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.8,why:"Stronger version",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.83867.jpg"},
+{name:"Le Male Elixir",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.9,why:"VERY hyped scent",dupe:"Lattafa Asad",image:"https://fimgs.net/mdimg/perfume/375x500.82425.jpg"},
+{name:"Kokorico",occasion:"school",budget:"mid",vibe:"Dark 🌿",rating:4.2,why:"Unique cocoa vibe",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.13327.jpg"}
+// ===== ARMANI =====
+{name:"Acqua di Gio",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.6,why:"Classic aquatic",dupe:"Cool Water",image:"https://fimgs.net/mdimg/perfume/375x500.410.jpg"},
+{name:"Acqua di Gio Profumo",occasion:"date",budget:"high",vibe:"Dark 🌊",rating:4.9,why:"Smoky aquatic",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.29727.jpg"},
+{name:"Acqua di Gio Profondo",occasion:"gym",budget:"mid",vibe:"Fresh 🌊",rating:4.7,why:"Modern aquatic",dupe:"Najdia",image:"https://fimgs.net/mdimg/perfume/375x500.59596.jpg"},
+{name:"Acqua di Gio Absolu",occasion:"date",budget:"mid",vibe:"Warm 🌊",rating:4.5,why:"Woody aquatic",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.52645.jpg"},
+{name:"Stronger With You",occasion:"date",budget:"mid",vibe:"Sweet 🍯",rating:4.7,why:"Warm sweet scent",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.46390.jpg"},
+{name:"Stronger With You Intensely",occasion:"date",budget:"mid",vibe:"Sweet 🔥",rating:4.8,why:"Very strong sweet",dupe:"Ramz Silver",image:"https://fimgs.net/mdimg/perfume/375x500.58283.jpg"},
+{name:"Stronger With You Absolutely",occasion:"date",budget:"mid",vibe:"Sweet 🥃",rating:4.8,why:"Boozy sweet",dupe:"Khamrah",image:"https://fimgs.net/mdimg/perfume/375x500.70868.jpg"},
+{name:"Armani Code",occasion:"date",budget:"mid",vibe:"Dark 🌙",rating:4.6,why:"Classic night scent",dupe:"Guess Seductive",image:"https://fimgs.net/mdimg/perfume/375x500.412.jpg"},
+{name:"Armani Code Profumo",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.7,why:"Warm amber",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.36398.jpg"},
+{name:"Armani Code Parfum",occasion:"date",budget:"mid",vibe:"Clean 🌙",rating:4.6,why:"Modern code",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.71978.jpg"},
+
+// ===== VALENTINO =====
+{name:"Valentino Uomo",occasion:"date",budget:"mid",vibe:"Warm ☕",rating:4.7,why:"Coffee chocolate vibe",dupe:"Ferragamo Uomo",image:"https://fimgs.net/mdimg/perfume/375x500.19558.jpg"},
+{name:"Valentino Uomo Intense",occasion:"date",budget:"mid",vibe:"Dark 🍫",rating:4.8,why:"Iris leather",dupe:"Dior Homme Intense",image:"https://fimgs.net/mdimg/perfume/375x500.38338.jpg"},
+{name:"Born in Roma Uomo",occasion:"school",budget:"mid",vibe:"Fresh 🌿",rating:4.6,why:"Modern versatile",dupe:"YSL Y",image:"https://fimgs.net/mdimg/perfume/375x500.55716.jpg"},
+{name:"Born in Roma Intense",occasion:"date",budget:"mid",vibe:"Sweet 🌙",rating:4.8,why:"Night version",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.79126.jpg"},
+{name:"Born in Roma Coral Fantasy",occasion:"school",budget:"mid",vibe:"Fresh 🍎",rating:4.6,why:"Fruity fresh",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.73431.jpg"},
+{name:"Born in Roma Yellow Dream",occasion:"school",budget:"mid",vibe:"Fresh 🍋",rating:4.5,why:"Light citrus",dupe:"none",image:"https://fimgs.net/mdimg/perfume/375x500.68197.jpg"}
 ];
 
 let history = [];
