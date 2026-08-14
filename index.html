@@ -1,0 +1,254 @@
+# Valentino Fragrance Finder — `index.html`
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Valentino Fragrance Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="hero-content">
+            <p class="eyebrow">VALENTINO BEAUTY</p>
+
+            <h1>Find Your<br><span>Perfect Fragrance.</span></h1>
+
+            <p class="hero-description">
+                Tell us where you're going, what the weather is like,
+                the season, and what you're doing. We'll find the
+                Valentino fragrance that fits the moment.
+            </p>
+
+            <button class="start-button" onclick="scrollToFinder()">
+                FIND MY FRAGRANCE
+            </button>
+        </div>
+    </header>
+
+
+    <main>
+
+        <section class="finder" id="finder">
+
+            <div class="section-heading">
+                <p class="eyebrow">THE FINDER</p>
+                <h2>Build Your Moment</h2>
+                <p>
+                    Choose the conditions and we'll calculate which
+                    Valentino fragrance fits you best.
+                </p>
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="question">
+                <label>Who are you shopping for?</label>
+
+                <div class="options gender-options">
+
+                    <button class="option gender-option active"
+                            data-value="men">
+                        <span>♂</span>
+                        Men's
+                    </button>
+
+                    <button class="option gender-option"
+                            data-value="women">
+                        <span>♀</span>
+                        Women's
+                    </button>
+
+                </div>
+            </div>
+
+
+            <!-- PLACE -->
+
+            <div class="question">
+
+                <label>Where are you going?</label>
+
+                <div class="options">
+
+                    <button class="option place-option" data-value="city">
+                        🏙️ City
+                    </button>
+
+                    <button class="option place-option" data-value="beach">
+                        🏖️ Beach
+                    </button>
+
+                    <button class="option place-option" data-value="forest">
+                        🌲 Outdoors
+                    </button>
+
+                    <button class="option place-option" data-value="restaurant">
+                        🍽️ Restaurant
+                    </button>
+
+                    <button class="option place-option" data-value="school">
+                        🎓 School
+                    </button>
+
+                    <button class="option place-option" data-value="home">
+                        🏠 Home
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- WEATHER -->
+
+            <div class="question">
+
+                <label>What's the weather like?</label>
+
+                <div class="options">
+
+                    <button class="option weather-option" data-value="hot">
+                        ☀️ Hot
+                    </button>
+
+                    <button class="option weather-option" data-value="warm">
+                        🌤️ Warm
+                    </button>
+
+                    <button class="option weather-option" data-value="cool">
+                        🌥️ Cool
+                    </button>
+
+                    <button class="option weather-option" data-value="cold">
+                        ❄️ Cold
+                    </button>
+
+                    <button class="option weather-option" data-value="rain">
+                        🌧️ Rainy
+                    </button>
+
+                    <button class="option weather-option" data-value="snow">
+                        🌨️ Snowy
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- SEASON -->
+
+            <div class="question">
+
+                <label>What season is it?</label>
+
+                <div class="options">
+
+                    <button class="option season-option" data-value="spring">
+                        🌱 Spring
+                    </button>
+
+                    <button class="option season-option" data-value="summer">
+                        ☀️ Summer
+                    </button>
+
+                    <button class="option season-option" data-value="fall">
+                        🍂 Fall
+                    </button>
+
+                    <button class="option season-option" data-value="winter">
+                        ❄️ Winter
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ENTERTAINMENT -->
+
+            <div class="question">
+
+                <label>What are you doing?</label>
+
+                <div class="options">
+
+                    <button class="option entertainment-option" data-value="party">
+                        🎉 Party
+                    </button>
+
+                    <button class="option entertainment-option" data-value="date">
+                        ❤️ Date
+                    </button>
+
+                    <button class="option entertainment-option" data-value="concert">
+                        🎵 Concert
+                    </button>
+
+                    <button class="option entertainment-option" data-value="casual">
+                        👟 Casual
+                    </button>
+
+                    <button class="option entertainment-option" data-value="formal">
+                        🕴️ Formal
+                    </button>
+
+                    <button class="option entertainment-option" data-value="nightout">
+                        🌃 Night Out
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button class="find-button" onclick="findFragrance()">
+                FIND MY MATCH
+            </button>
+
+        </section>
+
+
+        <!-- RESULTS -->
+
+        <section class="results hidden" id="results">
+
+            <div class="section-heading">
+                <p class="eyebrow">YOUR RESULTS</p>
+                <h2>Your Valentino Matches</h2>
+                <p id="result-description"></p>
+            </div>
+
+            <div id="results-container"></div>
+
+            <button class="again-button" onclick="resetFinder()">
+                START OVER
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>Valentino Fragrance Finder</p>
+        <p class="disclaimer">
+            Independent fragrance recommendation project.
+            Not affiliated with Valentino Beauty.
+        </p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+```
