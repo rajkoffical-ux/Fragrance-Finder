@@ -1,492 +1,144 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f6f3ee;
-    color: #171717;
-}
+const selections = {
+    gender: "men",
+    place: null,
+    weather: null,
+    season: null,
+    entertainment: null
+};
 
 
 /* =========================
-   HERO
+   BUTTON SELECTION
 ========================= */
 
-.hero {
-    min-height: 90vh;
+function setupButtons(className, selection) {
+    const buttons = document.querySelectorAll("." + className);
 
-    display: flex;
-    align-items: center;
+    buttons.forEach(function(button) {
 
-    padding: 80px 8%;
+        button.addEventListener("click", function() {
 
-    background:
-        radial-gradient(
-            circle at 80% 20%,
-            #d9c8b5,
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #f5f0e9,
-            #ddd4c8
-        );
+            buttons.forEach(function(otherButton) {
+                otherButton.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            selections[selection] = button.dataset.value;
+
+            console.log(selection + ": " + button.dataset.value);
+        });
+
+    });
 }
 
-.hero-content {
-    max-width: 850px;
-}
 
-.eyebrow {
-    font-size: 12px;
-    letter-spacing: 4px;
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-family: Georgia, serif;
-
-    font-size: clamp(55px, 9vw, 110px);
-
-    line-height: 0.92;
-
-    font-weight: 400;
-
-    margin-bottom: 35px;
-}
-
-.hero h1 span {
-    font-style: italic;
-}
-
-.hero-description {
-    max-width: 600px;
-
-    font-size: 19px;
-
-    line-height: 1.7;
-
-    color: #555;
-
-    margin-bottom: 40px;
-}
+setupButtons("gender-option", "gender");
+setupButtons("place-option", "place");
+setupButtons("weather-option", "weather");
+setupButtons("season-option", "season");
+setupButtons("entertainment-option", "entertainment");
 
 
 /* =========================
-   BUTTONS
+   START BUTTON
 ========================= */
 
-button {
-    font-family: inherit;
-}
-
-.start-button,
-.find-button,
-.again-button {
-
-    border: none;
-
-    background: #171717;
-
-    color: white;
-
-    padding: 18px 30px;
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition:
-        transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.start-button:hover,
-.find-button:hover,
-.again-button:hover {
-
-    transform: translateY(-3px);
-
-    background: #333;
-}
-
-.start-button:active,
-.find-button:active,
-.again-button:active {
-
-    transform: translateY(0);
-}
-
-
-/* =========================
-   FINDER
-========================= */
-
-.finder {
-
-    max-width: 1100px;
-
-    margin: auto;
-
-    padding: 120px 25px;
-}
-
-.section-heading {
-
-    text-align: center;
-
-    max-width: 700px;
-
-    margin: 0 auto 70px;
-}
-
-.section-heading h2 {
-
-    font-family: Georgia, serif;
-
-    font-size: clamp(40px, 6vw, 70px);
-
-    font-weight: 400;
-
-    margin-bottom: 20px;
-}
-
-.section-heading p {
-
-    color: #666;
-
-    line-height: 1.6;
-}
-
-
-/* =========================
-   QUESTIONS
-========================= */
-
-.question {
-
-    margin-bottom: 65px;
-}
-
-.question > label {
-
-    display: block;
-
-    font-family: Georgia, serif;
-
-    font-size: 30px;
-
-    margin-bottom: 25px;
-}
-
-.options {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(140px, 1fr));
-
-    gap: 12px;
-}
-
-
-/* =========================
-   CHOICE BUTTON
-========================= */
-
-.option {
-
-    min-height: 70px;
-
-    border: 2px solid #cfc8bf;
-
-    background: #ffffff;
-
-    color: #171717;
-
-    cursor: pointer;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    transition:
-        transform 0.15s ease,
-        border-color 0.15s ease,
-        background 0.15s ease,
-        color 0.15s ease,
-        box-shadow 0.15s ease;
-}
-
-
-/* HOVER */
-
-.option:hover {
-
-    border-color: #171717;
-
-    transform: translateY(-2px);
-
-    box-shadow:
-        0 6px 15px rgba(0, 0, 0, 0.08);
-}
-
-
-/* PRESSED / SELECTED */
-
-.option.selected {
-
-    background: #171717;
-
-    color: #ffffff;
-
-    border-color: #171717;
-
-    transform: scale(0.98);
-
-    box-shadow:
-        0 0 0 3px rgba(23, 23, 23, 0.15);
-}
-
-
-/* CLICK ANIMATION */
-
-.option:active {
-
-    transform: scale(0.94);
-}
-
-
-.gender-option {
-
-    min-height: 100px;
-
-    font-size: 18px;
-}
-
-.gender-option span {
-
-    display: block;
-
-    font-size: 30px;
-
-    margin-bottom: 5px;
-}
+document
+    .querySelector(".start-button")
+    .addEventListener("click", function() {
+
+        document
+            .querySelector(".finder")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
+
+    });
 
 
 /* =========================
    FIND BUTTON
 ========================= */
 
-.find-button {
+document
+    .querySelector(".find-button")
+    .addEventListener("click", function() {
 
-    display: block;
+        if (
+            !selections.gender ||
+            !selections.place ||
+            !selections.weather ||
+            !selections.season ||
+            !selections.entertainment
+        ) {
 
-    margin: 80px auto 0;
+            alert("Please select an answer for every question.");
 
-    padding: 22px 45px;
-
-    font-size: 13px;
-}
+            return;
+        }
 
 
-/* =========================
-   RESULTS
-========================= */
+        document
+            .querySelector(".results")
+            .classList.remove("hidden");
 
-.results {
 
-    max-width: 1100px;
+        document
+            .querySelector("#result-description")
+            .textContent =
+                "Your fragrance matches are being calculated from your selections.";
 
-    margin: auto;
 
-    padding: 100px 25px;
-}
+        document
+            .querySelector(".results")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-.hidden {
-
-    display: none;
-}
-
-.result-card {
-
-    background: white;
-
-    margin-bottom: 25px;
-
-    padding: 35px;
-
-    display: grid;
-
-    grid-template-columns:
-        100px 1fr auto;
-
-    gap: 30px;
-
-    align-items: center;
-
-    border: 1px solid #e0dcd6;
-
-    transition: transform 0.2s ease;
-}
-
-.result-card:hover {
-
-    transform: translateY(-3px);
-}
-
-.result-number {
-
-    font-family: Georgia, serif;
-
-    font-size: 45px;
-
-    color: #aaa;
-}
-
-.result-info h3 {
-
-    font-family: Georgia, serif;
-
-    font-size: 30px;
-
-    font-weight: 400;
-
-    margin-bottom: 10px;
-}
-
-.result-info p {
-
-    color: #666;
-
-    line-height: 1.6;
-}
-
-.notes {
-
-    margin-top: 15px;
-
-    font-size: 13px;
-
-    color: #555;
-}
-
-.match-score {
-
-    text-align: center;
-}
-
-.match-score strong {
-
-    display: block;
-
-    font-family: Georgia, serif;
-
-    font-size: 42px;
-}
-
-.match-score span {
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: #777;
-}
-
-.again-button {
-
-    display: block;
-
-    margin: 50px auto 0;
-}
+    });
 
 
 /* =========================
-   FOOTER
+   START OVER
 ========================= */
 
-footer {
+document
+    .querySelector(".again-button")
+    .addEventListener("click", function() {
 
-    background: #171717;
-
-    color: white;
-
-    padding: 50px 25px;
-
-    text-align: center;
-}
-
-footer p:first-child {
-
-    font-family: Georgia, serif;
-
-    font-size: 25px;
-
-    margin-bottom: 15px;
-}
-
-.disclaimer {
-
-    color: #999;
-
-    font-size: 12px;
-}
+        selections.place = null;
+        selections.weather = null;
+        selections.season = null;
+        selections.entertainment = null;
 
 
-/* =========================
-   MOBILE
-========================= */
+        document
+            .querySelectorAll(".option")
+            .forEach(function(button) {
 
-@media (max-width: 700px) {
+                button.classList.remove("active");
 
-    .hero {
+            });
 
-        padding: 60px 25px;
-    }
 
-    .hero h1 {
+        document
+            .querySelector(".gender-option")
+            .classList.add("active");
 
-        font-size: 58px;
-    }
 
-    .finder,
-    .results {
+        selections.gender = "men";
 
-        padding-top: 80px;
 
-        padding-bottom: 80px;
-    }
+        document
+            .querySelector(".results")
+            .classList.add("hidden");
 
-    .result-card {
 
-        grid-template-columns: 1fr;
+        document
+            .querySelector(".finder")
+            .scrollIntoView({
+                behavior: "smooth"
+            });
 
-        gap: 15px;
-    }
-
-    .result-number {
-
-        font-size: 30px;
-    }
-
-    .match-score {
-
-        text-align: left;
-    }
-
-}
+    });
