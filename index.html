@@ -1,13 +1,10 @@
-# Valentino Fragrance Finder — `index.html`
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Valentino Fragrance Finder</title>
+    <title>Fragrance Finder</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -16,17 +13,20 @@
 
     <header class="hero">
         <div class="hero-content">
-            <p class="eyebrow">VALENTINO BEAUTY</p>
+            <p class="eyebrow">THE FRAGRANCE FINDER</p>
 
-            <h1>Find Your<br><span>Perfect Fragrance.</span></h1>
+            <h1>
+                Find Your<br>
+                <span>Perfect Scent.</span>
+            </h1>
 
             <p class="hero-description">
                 Tell us where you're going, what the weather is like,
                 the season, and what you're doing. We'll find the
-                Valentino fragrance that fits the moment.
+                fragrance that fits the moment.
             </p>
 
-            <button class="start-button" onclick="scrollToFinder()">
+            <button class="start-button" id="startButton">
                 FIND MY FRAGRANCE
             </button>
         </div>
@@ -39,10 +39,12 @@
 
             <div class="section-heading">
                 <p class="eyebrow">THE FINDER</p>
+
                 <h2>Build Your Moment</h2>
+
                 <p>
-                    Choose the conditions and we'll calculate which
-                    Valentino fragrance fits you best.
+                    Choose your conditions and we'll calculate
+                    the fragrances that fit them best.
                 </p>
             </div>
 
@@ -52,9 +54,9 @@
             <div class="question">
                 <label>Who are you shopping for?</label>
 
-                <div class="options gender-options">
+                <div class="options">
 
-                    <button class="option gender-option active"
+                    <button class="option gender-option selected"
                             data-value="men">
                         <span>♂</span>
                         Men's
@@ -73,7 +75,6 @@
             <!-- PLACE -->
 
             <div class="question">
-
                 <label>Where are you going?</label>
 
                 <div class="options">
@@ -86,7 +87,7 @@
                         🏖️ Beach
                     </button>
 
-                    <button class="option place-option" data-value="forest">
+                    <button class="option place-option" data-value="outdoors">
                         🌲 Outdoors
                     </button>
 
@@ -103,14 +104,12 @@
                     </button>
 
                 </div>
-
             </div>
 
 
             <!-- WEATHER -->
 
             <div class="question">
-
                 <label>What's the weather like?</label>
 
                 <div class="options">
@@ -140,14 +139,12 @@
                     </button>
 
                 </div>
-
             </div>
 
 
             <!-- SEASON -->
 
             <div class="question">
-
                 <label>What season is it?</label>
 
                 <div class="options">
@@ -169,14 +166,12 @@
                     </button>
 
                 </div>
-
             </div>
 
 
             <!-- ENTERTAINMENT -->
 
             <div class="question">
-
                 <label>What are you doing?</label>
 
                 <div class="options">
@@ -206,11 +201,10 @@
                     </button>
 
                 </div>
-
             </div>
 
 
-            <button class="find-button" onclick="findFragrance()">
+            <button class="find-button" id="findButton">
                 FIND MY MATCH
             </button>
 
@@ -222,14 +216,18 @@
         <section class="results hidden" id="results">
 
             <div class="section-heading">
+
                 <p class="eyebrow">YOUR RESULTS</p>
-                <h2>Your Valentino Matches</h2>
+
+                <h2>Your Best Matches</h2>
+
                 <p id="result-description"></p>
+
             </div>
 
             <div id="results-container"></div>
 
-            <button class="again-button" onclick="resetFinder()">
+            <button class="again-button" id="againButton">
                 START OVER
             </button>
 
@@ -239,11 +237,13 @@
 
 
     <footer>
-        <p>Valentino Fragrance Finder</p>
+
+        <p>Fragrance Finder</p>
+
         <p class="disclaimer">
-            Independent fragrance recommendation project.
-            Not affiliated with Valentino Beauty.
+            An independent fragrance recommendation project.
         </p>
+
     </footer>
 
 
@@ -251,4 +251,3 @@
 
 </body>
 </html>
-```
