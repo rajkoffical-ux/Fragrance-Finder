@@ -1,0 +1,324 @@
+# Valentino Fragrance Finder — `style.css`
+
+```css
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f6f3ee;
+    color: #171717;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 80px 8%;
+
+    background:
+        radial-gradient(circle at 80% 20%, #d9c8b5, transparent 35%),
+        linear-gradient(135deg, #f5f0e9, #ddd4c8);
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 9vw, 110px);
+    line-height: 0.92;
+    font-weight: 400;
+    margin-bottom: 35px;
+}
+
+.hero h1 span {
+    font-style: italic;
+}
+
+.hero-description {
+    max-width: 600px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.start-button,
+.find-button,
+.again-button {
+    border: none;
+    background: #171717;
+    color: white;
+
+    padding: 18px 30px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+.start-button:hover,
+.find-button:hover,
+.again-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.85;
+}
+
+
+/* FINDER */
+
+.finder {
+    max-width: 1100px;
+    margin: auto;
+    padding: 120px 25px;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 70px;
+}
+
+.section-heading h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(40px, 6vw, 70px);
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.section-heading p {
+    color: #666;
+    line-height: 1.6;
+}
+
+
+/* QUESTIONS */
+
+.question {
+    margin-bottom: 65px;
+}
+
+.question > label {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.option {
+    min-height: 70px;
+
+    border: 1px solid #cfc8bf;
+    background: #fff;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: 0.2s;
+}
+
+.option:hover {
+    border-color: #171717;
+    transform: translateY(-2px);
+}
+
+.option.active {
+    background: #171717;
+    color: white;
+    border-color: #171717;
+}
+
+.gender-option {
+    min-height: 100px;
+    font-size: 18px;
+}
+
+.gender-option span {
+    display: block;
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+
+/* FIND BUTTON */
+
+.find-button {
+    display: block;
+    margin: 80px auto 0;
+
+    padding: 22px 45px;
+
+    font-size: 13px;
+}
+
+
+/* RESULTS */
+
+.results {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 25px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-card {
+    background: white;
+
+    margin-bottom: 25px;
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+
+    gap: 30px;
+
+    align-items: center;
+
+    border: 1px solid #e0dcd6;
+}
+
+.result-number {
+    font-family: Georgia, serif;
+    font-size: 45px;
+    color: #aaa;
+}
+
+.result-info h3 {
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.result-info .type {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.result-info p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.match-score {
+    text-align: center;
+}
+
+.match-score strong {
+    display: block;
+    font-family: Georgia, serif;
+    font-size: 42px;
+}
+
+.match-score span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #777;
+}
+
+.notes {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #555;
+}
+
+.again-button {
+    display: block;
+    margin: 50px auto 0;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #171717;
+    color: white;
+
+    padding: 50px 25px;
+
+    text-align: center;
+}
+
+footer p:first-child {
+    font-family: Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    color: #999;
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding: 60px 25px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .finder,
+    .results {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .result-number {
+        font-size: 30px;
+    }
+
+    .match-score {
+        text-align: left;
+    }
+
+}
+```
