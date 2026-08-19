@@ -595,8 +595,877 @@ const fragrances = [
             spring: 9, summer: 9, fall: 8, winter: 4,
             party: 10, date: 9, concert: 10, casual: 9, formal: 5, nightout: 10
         }
-    }
+    },
+    /* =================================================
+       XERJOFF
+    ================================================= */
 
+    {
+        name: "Naxos",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A rich Mediterranean fragrance blending citrus, lavender, honey and tobacco.",
+        notes: "Lavender • Honey • Tobacco • Vanilla",
+        scores: {
+            city: 9, beach: 6, outdoors: 7, restaurant: 10, school: 3, home: 8,
+            hot: 4, warm: 7, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 7, summer: 4, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 6, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Erba Pura",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A bright fruity-musky fragrance with a powerful, colorful character.",
+        notes: "Citrus • Fruity Notes • Amber • Musk",
+        scores: {
+            city: 10, beach: 9, outdoors: 8, restaurant: 8, school: 6, home: 7,
+            hot: 8, warm: 10, cool: 8, cold: 5, rain: 7, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 10, date: 9, concert: 10, casual: 9, formal: 7, nightout: 9
+        }
+    },
+
+    {
+        name: "Torino21",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A fresh green aromatic fragrance that is especially suited to warm weather.",
+        notes: "Mint • Lemon • Basil • Verbena",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 7, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 7, cold: 3, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 6, nightout: 7
+        }
+    },
+
+    {
+        name: "Torino22",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A crisp aromatic fragrance with a clean, energetic personality.",
+        notes: "Bergamot • Lavender • Saffron • Eucalyptus",
+        scores: {
+            city: 9, beach: 9, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 9, warm: 10, cool: 8, cold: 4, rain: 8, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 9, date: 8, concert: 9, casual: 10, formal: 7, nightout: 8
+        }
+    },
+
+    {
+        name: "40 Knots",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A marine-inspired woody fragrance with a salty, sophisticated character.",
+        notes: "Woody Notes • Marine Notes • Honey • Green Notes",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 7, home: 8,
+            hot: 9, warm: 10, cool: 8, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 8, date: 9, concert: 8, casual: 9, formal: 8, nightout: 8
+        }
+    },
+
+    {
+        name: "Alexandria II",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A luxurious woody fragrance with a rich, elegant and powerful character.",
+        notes: "Lavender • Rosewood • Sandalwood • Oud",
+        scores: {
+            city: 9, beach: 3, outdoors: 5, restaurant: 10, school: 2, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 4, summer: 2, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Renaissance",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A sparkling citrus fragrance with a fresh and energetic Mediterranean feel.",
+        notes: "Lemon • Bergamot • Mint • Musk",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 7, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 5, nightout: 7
+        }
+    },
+
+    {
+        name: "Lira",
+        brand: "Xerjoff",
+        gender: "women",
+        image: null,
+        description: "A sweet gourmand fragrance with a warm citrus, caramel and vanilla character.",
+        notes: "Blood Orange • Cinnamon • Caramel • Vanilla",
+        scores: {
+            city: 9, beach: 5, outdoors: 5, restaurant: 10, school: 5, home: 9,
+            hot: 4, warm: 7, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 7, summer: 4, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 6, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Dama Bianca",
+        brand: "Xerjoff",
+        gender: "women",
+        image: null,
+        description: "A soft floral and powdery fragrance with a clean, elegant personality.",
+        notes: "Lime • Iris • Jasmine • Vanilla • White Musk",
+        scores: {
+            city: 9, beach: 7, outdoors: 7, restaurant: 9, school: 8, home: 9,
+            hot: 7, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 8, date: 10, concert: 7, casual: 9, formal: 10, nightout: 8
+        }
+    },
+
+    {
+        name: "Accento",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A sophisticated fruity-floral fragrance with a smooth, elegant character.",
+        notes: "Pineapple • Hyacinth • Jasmine • Vanilla",
+        scores: {
+            city: 9, beach: 7, outdoors: 7, restaurant: 9, school: 6, home: 8,
+            hot: 6, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 7, fall: 9, winter: 6,
+            party: 9, date: 10, concert: 8, casual: 7, formal: 9, nightout: 9
+        }
+    },
+
+    {
+        name: "Mefisto",
+        brand: "Xerjoff",
+        gender: "men",
+        image: null,
+        description: "A bright citrus and aromatic fragrance with a clean masculine character.",
+        notes: "Grapefruit • Bergamot • Lavender • Musk",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 7, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 3,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 6, nightout: 7
+        }
+    },
+
+    {
+        name: "Uden",
+        brand: "Xerjoff",
+        gender: "men",
+        image: null,
+        description: "A refined citrus-woody fragrance with a fresh yet elegant personality.",
+        notes: "Lemon • Grapefruit • Rum • Coffee • Sandalwood",
+        scores: {
+            city: 9, beach: 8, outdoors: 9, restaurant: 9, school: 8, home: 8,
+            hot: 8, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 9, fall: 8, winter: 6,
+            party: 8, date: 9, concert: 8, casual: 9, formal: 9, nightout: 8
+        }
+    },
+
+    {
+        name: "More Than Words",
+        brand: "Xerjoff",
+        gender: "unisex",
+        image: null,
+        description: "A rich, dark and artistic fragrance built around fruity and woody accords.",
+        notes: "Fruity Notes • Oud • Amber • Woods",
+        scores: {
+            city: 9, beach: 2, outdoors: 4, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+
+    /* =================================================
+       ARMANI
+    ================================================= */
+
+    {
+        name: "Acqua di Giò Eau de Toilette",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A classic fresh aquatic fragrance with a Mediterranean character.",
+        notes: "Marine Notes • Bergamot • Rosemary • Patchouli",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 7, school: 10, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 6, nightout: 7
+        }
+    },
+
+    {
+        name: "Acqua di Giò Profondo",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A deeper marine fragrance with an aromatic and mineral character.",
+        notes: "Marine Notes • Cypress • Rosemary • Patchouli",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 9, date: 8, concert: 9, casual: 10, formal: 7, nightout: 8
+        }
+    },
+
+    {
+        name: "Acqua di Giò Parfum",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A refined woody aquatic fragrance with a darker and more elegant character.",
+        notes: "Marine Notes • Bergamot • Rosemary • Woods",
+        scores: {
+            city: 9, beach: 9, outdoors: 9, restaurant: 9, school: 7, home: 8,
+            hot: 8, warm: 9, cool: 9, cold: 7, rain: 9, snow: 4,
+            spring: 9, summer: 9, fall: 9, winter: 6,
+            party: 9, date: 9, concert: 8, casual: 8, formal: 9, nightout: 9
+        }
+    },
+
+    {
+        name: "Acqua di Giò Elixir",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A concentrated and powerful interpretation of the Acqua di Giò style.",
+        notes: "Marine Notes • Citrus • Woody Notes • Patchouli",
+        scores: {
+            city: 9, beach: 8, outdoors: 8, restaurant: 9, school: 5, home: 8,
+            hot: 6, warm: 8, cool: 10, cold: 9, rain: 9, snow: 7,
+            spring: 8, summer: 6, fall: 10, winter: 9,
+            party: 10, date: 9, concert: 9, casual: 6, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Armani Code Eau de Toilette",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A smooth aromatic fragrance with a warm and sophisticated personality.",
+        notes: "Lemon • Olive Blossom • Tonka Bean • Guaiac Wood",
+        scores: {
+            city: 9, beach: 5, outdoors: 6, restaurant: 10, school: 5, home: 8,
+            hot: 5, warm: 7, cool: 10, cold: 9, rain: 8, snow: 7,
+            spring: 7, summer: 5, fall: 10, winter: 9,
+            party: 10, date: 10, concert: 9, casual: 6, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Armani Code Parfum",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A modern aromatic woody fragrance with a clean, elegant character.",
+        notes: "Bergamot • Iris • Clary Sage • Tonka Bean",
+        scores: {
+            city: 10, beach: 6, outdoors: 7, restaurant: 10, school: 7, home: 8,
+            hot: 6, warm: 8, cool: 10, cold: 9, rain: 8, snow: 6,
+            spring: 8, summer: 6, fall: 10, winter: 9,
+            party: 9, date: 10, concert: 8, casual: 8, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Stronger With You",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A warm sweet fragrance with an inviting chestnut and vanilla character.",
+        notes: "Chestnut • Sage • Vanilla",
+        scores: {
+            city: 9, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 5, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Stronger With You Intensely",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A sweeter, richer and more intense version of Stronger With You.",
+        notes: "Pink Pepper • Toffee • Cinnamon • Vanilla",
+        scores: {
+            city: 9, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 1, warm: 4, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Stronger With You Absolutely",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A rich warm fragrance with rum, vanilla and chestnut facets.",
+        notes: "Rum • Chestnut • Vanilla • Cedar",
+        scores: {
+            city: 9, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 3, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "My Way Eau de Parfum",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "A bright floral fragrance with a modern feminine character.",
+        notes: "Orange Blossom • Tuberose • Vanilla • Cedar",
+        scores: {
+            city: 9, beach: 7, outdoors: 8, restaurant: 9, school: 8, home: 8,
+            hot: 7, warm: 9, cool: 8, cold: 6, rain: 7, snow: 4,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 9, date: 10, concert: 8, casual: 9, formal: 9, nightout: 9
+        }
+    },
+
+    {
+        name: "My Way Intense",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "A richer floral fragrance with stronger depth and projection.",
+        notes: "Orange Blossom • Tuberose • Sandalwood • Vanilla",
+        scores: {
+            city: 9, beach: 4, outdoors: 6, restaurant: 10, school: 5, home: 8,
+            hot: 4, warm: 7, cool: 10, cold: 9, rain: 8, snow: 7,
+            spring: 7, summer: 4, fall: 10, winter: 9,
+            party: 10, date: 10, concert: 9, casual: 6, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Sì Eau de Parfum",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "An elegant modern chypre fragrance with a sophisticated fruity character.",
+        notes: "Blackcurrant • Rose • Freesia • Vanilla • Patchouli",
+        scores: {
+            city: 10, beach: 5, outdoors: 6, restaurant: 10, school: 6, home: 8,
+            hot: 5, warm: 7, cool: 9, cold: 9, rain: 8, snow: 6,
+            spring: 8, summer: 5, fall: 10, winter: 9,
+            party: 9, date: 10, concert: 8, casual: 7, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Sì Passione",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "A vibrant fruity-floral fragrance with a confident and energetic personality.",
+        notes: "Blackcurrant • Pear • Rose • Vanilla",
+        scores: {
+            city: 9, beach: 7, outdoors: 8, restaurant: 8, school: 8, home: 8,
+            hot: 7, warm: 9, cool: 8, cold: 6, rain: 7, snow: 4,
+            spring: 10, summer: 8, fall: 8, winter: 5,
+            party: 10, date: 10, concert: 9, casual: 9, formal: 7, nightout: 9
+        }
+    },
+
+    {
+        name: "Sì Intense",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "A deeper and more luxurious interpretation of the Sì signature.",
+        notes: "Blackcurrant • Rose • Vanilla • Benzoin",
+        scores: {
+            city: 10, beach: 3, outdoors: 5, restaurant: 10, school: 4, home: 8,
+            hot: 3, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 3, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 5, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Emporio Armani He",
+        brand: "Armani",
+        gender: "men",
+        image: null,
+        description: "A clean woody aromatic fragrance with a classic versatile character.",
+        notes: "Yuzu • Cardamom • Sage • Cedar",
+        scores: {
+            city: 9, beach: 8, outdoors: 9, restaurant: 8, school: 9, home: 8,
+            hot: 8, warm: 9, cool: 9, cold: 6, rain: 8, snow: 4,
+            spring: 10, summer: 9, fall: 8, winter: 5,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 8
+        }
+    },
+
+    {
+        name: "Ocean di Gioia",
+        brand: "Armani",
+        gender: "women",
+        image: null,
+        description: "A fresh aquatic floral fragrance designed for bright warm-weather settings.",
+        notes: "Pear • Water Jasmine • Marine Notes • Musk",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 7, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 5, nightout: 7
+        }
+    },
+   {
+    name: "Fierezza",
+    brand: "Xerjoff",
+    gender: "unisex",
+    image: null,
+    description: "A bold fragrance from the Xerjoff x Automobili Lamborghini collaboration.",
+    notes: "TBD",
+    scores: {
+        city: 9, beach: 5, outdoors: 8, restaurant: 9, school: 4, home: 7,
+        hot: 5, warm: 7, cool: 10, cold: 9, rain: 8, snow: 6,
+        spring: 7, summer: 5, fall: 9, winter: 8,
+        party: 10, date: 9, concert: 10, casual: 6, formal: 9, nightout: 10
+    }
+},
+
+{
+    name: "Avanguardia",
+    brand: "Xerjoff",
+    gender: "unisex",
+    image: null,
+    description: "A powerful woody-fruity fragrance created with Automobili Lamborghini.",
+    notes: "Mandarin • Davana • Cherry • Black Violet • Patchouli • Tonka Bean",
+    scores: {
+        city: 9, beach: 3, outdoors: 7, restaurant: 10, school: 2, home: 8,
+        hot: 3, warm: 6, cool: 10, cold: 10, rain: 8, snow: 8,
+        spring: 5, summer: 3, fall: 10, winter: 10,
+        party: 10, date: 10, concert: 10, casual: 5, formal: 9, nightout: 10
+    }
+},
+
+{
+    name: "Perseveranza",
+    brand: "Xerjoff",
+    gender: "unisex",
+    image: null,
+    description: "A luxurious fragrance completing the Xerjoff x Automobili Lamborghini driving experience.",
+    notes: "TBD",
+    scores: {
+        city: 9, beach: 4, outdoors: 6, restaurant: 10, school: 3, home: 8,
+        hot: 4, warm: 6, cool: 10, cold: 10, rain: 8, snow: 8,
+        spring: 6, summer: 4, fall: 10, winter: 10,
+        party: 10, date: 10, concert: 9, casual: 5, formal: 10, nightout: 10
+    }
+},
+    /* =================================================
+       CREED
+    ================================================= */
+
+    {
+        name: "Aventus",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A legendary fruity-smoky fragrance with a sophisticated masculine character.",
+        notes: "Pineapple • Bergamot • Birch • Musk • Oakmoss",
+        scores: {
+            city: 10, beach: 7, outdoors: 9, restaurant: 10, school: 6, home: 8,
+            hot: 7, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 9, winter: 6,
+            party: 10, date: 10, concert: 10, casual: 9, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Aventus Cologne",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A fresher and brighter take on the Aventus style.",
+        notes: "Mandarin • Ginger • Pink Pepper • Vetiver • Sandalwood",
+        scores: {
+            city: 10, beach: 9, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 9, date: 9, concert: 9, casual: 10, formal: 7, nightout: 8
+        }
+    },
+
+    {
+        name: "Green Irish Tweed",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A refined green and aromatic fragrance with a classic clean character.",
+        notes: "Lemon Verbena • Iris • Violet Leaf • Sandalwood • Ambergris",
+        scores: {
+            city: 9, beach: 7, outdoors: 10, restaurant: 9, school: 9, home: 8,
+            hot: 9, warm: 10, cool: 9, cold: 6, rain: 9, snow: 4,
+            spring: 10, summer: 9, fall: 8, winter: 5,
+            party: 8, date: 9, concert: 8, casual: 10, formal: 10, nightout: 8
+        }
+    },
+
+    {
+        name: "Silver Mountain Water",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A crisp clean fragrance inspired by mountain air and alpine landscapes.",
+        notes: "Bergamot • Blackcurrant • Green Tea • Musk • Sandalwood",
+        scores: {
+            city: 9, beach: 9, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
+        }
+    },
+
+    {
+        name: "Himalaya",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A sophisticated woody fragrance with a fresh citrus opening.",
+        notes: "Grapefruit • Lemon • Sandalwood • Cedar • Musk",
+        scores: {
+            city: 9, beach: 8, outdoors: 9, restaurant: 9, school: 8, home: 8,
+            hot: 8, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 9, summer: 9, fall: 8, winter: 6,
+            party: 8, date: 9, concert: 8, casual: 9, formal: 9, nightout: 8
+        }
+    },
+
+    {
+        name: "Viking",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A bold aromatic woody fragrance with a confident traditional character.",
+        notes: "Pink Pepper • Bergamot • Peppermint • Vetiver • Cedar",
+        scores: {
+            city: 9, beach: 6, outdoors: 10, restaurant: 9, school: 7, home: 8,
+            hot: 7, warm: 8, cool: 10, cold: 8, rain: 9, snow: 6,
+            spring: 9, summer: 7, fall: 10, winter: 7,
+            party: 9, date: 9, concert: 9, casual: 8, formal: 10, nightout: 9
+        }
+    },
+
+    {
+        name: "Viking Cologne",
+        brand: "Creed",
+        gender: "men",
+        image: null,
+        description: "A fresher interpretation of Viking with an energetic citrus and aromatic profile.",
+        notes: "Mandarin • Lemon • Pink Pepper • Lavender • Sandalwood",
+        scores: {
+            city: 9, beach: 9, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 9, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 8, nightout: 7
+        }
+    },
+
+    {
+        name: "Royal Oud",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A luxurious woody fragrance with an elegant refined character.",
+        notes: "Pink Pepper • Lemon • Cedar • Sandalwood • Oud",
+        scores: {
+            city: 10, beach: 3, outdoors: 5, restaurant: 10, school: 2, home: 8,
+            hot: 3, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Original Santal",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A warm creamy sandalwood fragrance with a polished luxurious feel.",
+        notes: "Cinnamon • Sandalwood • Lavender • Vanilla • Musk",
+        scores: {
+            city: 9, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 5, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Original Vetiver",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A clean green fragrance centered around fresh vetiver and citrus.",
+        notes: "Bergamot • Mandarin • Vetiver • Sandalwood • Musk",
+        scores: {
+            city: 9, beach: 9, outdoors: 10, restaurant: 8, school: 10, home: 9,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 7, date: 8, concert: 7, casual: 10, formal: 8, nightout: 6
+        }
+    },
+
+    {
+        name: "Virgin Island Water",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A tropical citrus fragrance with a bright Caribbean-inspired character.",
+        notes: "Lime • Coconut • Bergamot • White Rum • Musk",
+        scores: {
+            city: 8, beach: 10, outdoors: 10, restaurant: 7, school: 8, home: 8,
+            hot: 10, warm: 10, cool: 6, cold: 2, rain: 8, snow: 1,
+            spring: 10, summer: 10, fall: 5, winter: 1,
+            party: 9, date: 9, concert: 9, casual: 10, formal: 4, nightout: 8
+        }
+    },
+
+    {
+        name: "Millésime Impérial",
+        brand: "Creed",
+        gender: "unisex",
+        image: null,
+        description: "A bright elegant citrus-marine fragrance with a luxurious clean character.",
+        notes: "Sea Salt • Lemon • Iris • Musk • Woody Notes",
+        scores: {
+            city: 10, beach: 10, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 8, nightout: 7
+        }
+    },
+
+    {
+        name: "Carmina",
+        brand: "Creed",
+        gender: "women",
+        image: null,
+        description: "A sophisticated floral fragrance with a dark fruity and woody character.",
+        notes: "Black Cherry • Pink Pepper • Rose • Saffron • Amber",
+        scores: {
+            city: 9, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 8,
+            hot: 3, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Wind Flowers",
+        brand: "Creed",
+        gender: "women",
+        image: null,
+        description: "An elegant floral fragrance with a soft feminine character.",
+        notes: "Jasmine • Tuberose • Orange Blossom • Sandalwood • Musk",
+        scores: {
+            city: 9, beach: 6, outdoors: 7, restaurant: 10, school: 7, home: 9,
+            hot: 6, warm: 8, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 8, date: 10, concert: 7, casual: 8, formal: 10, nightout: 8
+        }
+    },
+
+
+    /* =================================================
+       PARFUMS DE MARLY
+    ================================================= */
+
+    {
+        name: "Althaïr",
+        brand: "Parfums de Marly",
+        gender: "men",
+        image: null,
+        description: "A warm sweet vanilla fragrance with a rich woody character.",
+        notes: "Cinnamon • Orange Blossom • Bourbon Vanilla • Guaiac Wood",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 1, warm: 4, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Layton",
+        brand: "Parfums de Marly",
+        gender: "unisex",
+        image: null,
+        description: "A sweet spicy fragrance balancing fresh fruit with warm vanilla and woods.",
+        notes: "Apple • Bergamot • Lavender • Jasmine • Vanilla • Pepper",
+        scores: {
+            city: 10, beach: 4, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 5, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Percival",
+        brand: "Parfums de Marly",
+        gender: "unisex",
+        image: null,
+        description: "A fresh aromatic fragrance with a clean versatile character.",
+        notes: "Bergamot • Mandarin • Lavender • Geranium • Ambrox",
+        scores: {
+            city: 10, beach: 9, outdoors: 10, restaurant: 9, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 9, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 9, date: 9, concert: 9, casual: 10, formal: 8, nightout: 8
+        }
+    },
+
+    {
+        name: "Haltane",
+        brand: "Parfums de Marly",
+        gender: "men",
+        image: null,
+        description: "A sophisticated woody fragrance combining freshness with rich sweetness.",
+        notes: "Bergamot • Saffron • Praline • Oud • Patchouli",
+        scores: {
+            city: 9, beach: 2, outdoors: 5, restaurant: 10, school: 2, home: 8,
+            hot: 2, warm: 4, cool: 10, cold: 10, rain: 8, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 3, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Herod",
+        brand: "Parfums de Marly",
+        gender: "men",
+        image: null,
+        description: "A warm tobacco fragrance with sweet spicy and woody facets.",
+        notes: "Cinnamon • Pepper • Tobacco • Vanilla • Cedar",
+        scores: {
+            city: 9, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 3, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Delina",
+        brand: "Parfums de Marly",
+        gender: "women",
+        image: null,
+        description: "A luxurious fruity floral fragrance centered around rose and lychee.",
+        notes: "Lychee • Rhubarb • Rose • Peony • Vanilla • Musk",
+        scores: {
+            city: 10, beach: 6, outdoors: 7, restaurant: 10, school: 7, home: 9,
+            hot: 7, warm: 9, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 9, date: 10, concert: 8, casual: 8, formal: 10, nightout: 9
+        }
+    },
+
+    {
+        name: "Delina Exclusif",
+        brand: "Parfums de Marly",
+        gender: "women",
+        image: null,
+        description: "A richer interpretation of Delina with deeper fruity, floral and woody facets.",
+        notes: "Lychee • Pear • Rose • Incense • Vanilla • Oud",
+        scores: {
+            city: 9, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Layton Exclusif",
+        brand: "Parfums de Marly",
+        gender: "unisex",
+        image: null,
+        description: "A darker and richer interpretation of Layton with woody and smoky depth.",
+        notes: "Almond • Bergamot • Pink Pepper • Coffee • Oud • Amber",
+        scores: {
+            city: 9, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 1, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Oajan",
+        brand: "Parfums de Marly",
+        gender: "unisex",
+        image: null,
+        description: "A rich gourmand fragrance built around honey, cinnamon and vanilla.",
+        notes: "Honey • Cinnamon • Osmanthus • Ambergris • Vanilla",
+        scores: {
+            city: 9, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 10,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 1, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 2, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Greenley",
+        brand: "Parfums de Marly",
+        gender: "men",
+        image: null,
+        description: "A crisp green fruity fragrance with a bright modern character.",
+        notes: "Green Apple • Mandarin • Cedar • Cashmere Wood • Musk",
+        scores: {
+            city: 9, beach: 9, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 4, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
+        }
+    },
+
+    {
+        name: "Sedley",
+        brand: "Parfums de Marly",
+        gender: "men",
+        image: null,
+        description: "A fresh citrus aromatic fragrance designed for clean warm-weather wear.",
+        notes: "Lemon • Mint • Bergamot • Lavender • Sandalwood",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 10, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
+        }
+    }
 ];
 
 
