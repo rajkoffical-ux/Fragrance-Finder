@@ -1465,8 +1465,685 @@ const fragrances = [
             spring: 10, summer: 10, fall: 6, winter: 2,
             party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
         }
+    },
+       /* =================================================
+       TOM FORD
+    ================================================= */
+
+    {
+        name: "Oud Wood",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A smooth sophisticated woody fragrance with a refined oud character.",
+        notes: "Rosewood • Cardamom • Oud • Sandalwood • Amber",
+        scores: {
+            city: 10, beach: 3, outdoors: 5, restaurant: 10, school: 2, home: 8,
+            hot: 3, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 8, date: 10, concert: 7, casual: 5, formal: 10, nightout: 9
+        }
+    },
+
+    {
+        name: "Tobacco Vanille",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A rich sweet tobacco fragrance with a warm vanilla character.",
+        notes: "Tobacco Leaf • Vanilla • Cacao • Tonka Bean • Dried Fruits",
+        scores: {
+            city: 9, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 10,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 3, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Lost Cherry",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A sweet seductive cherry fragrance with almond and vanilla facets.",
+        notes: "Black Cherry • Bitter Almond • Tonka Bean • Vanilla",
+        scores: {
+            city: 9, beach: 4, outdoors: 5, restaurant: 10, school: 2, home: 9,
+            hot: 3, warm: 6, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 3, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Oud Minerale",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A marine woody fragrance combining salty mineral notes with woods.",
+        notes: "Seaweed • Pink Pepper • Sea Salt • Oud • Woods",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 6, home: 8,
+            hot: 9, warm: 10, cool: 8, cold: 4, rain: 10, snow: 2,
+            spring: 10, summer: 10, fall: 7, winter: 3,
+            party: 9, date: 8, concert: 9, casual: 9, formal: 7, nightout: 8
+        }
+    },
+
+    {
+        name: "Neroli Portofino",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A bright citrus aromatic fragrance inspired by the Italian Riviera.",
+        notes: "Bergamot • Lemon • Mandarin • Neroli • Orange Blossom",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 7, cold: 3, rain: 8, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
+        }
+    },
+
+    {
+        name: "Costa Azzurra",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A fresh aromatic woody fragrance with a Mediterranean coastal feel.",
+        notes: "Seaweed • Lemon • Cypress • Oakmoss • Driftwood",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 7, nightout: 7
+        }
+    },
+
+    {
+        name: "Fucking Fabulous",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A bold creamy leather fragrance with an unusual almond and vanilla character.",
+        notes: "Almond • Leather • Orris • Tonka Bean • Cashmeran",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 9, concert: 10, casual: 2, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Ombré Leather",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A smooth modern leather fragrance with floral and woody depth.",
+        notes: "Cardamom • Jasmine • Leather • Amber • Moss",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 8,
+            hot: 2, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Black Orchid",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A dark luxurious floral fragrance with earthy, spicy and gourmand facets.",
+        notes: "Black Truffle • Ylang-Ylang • Black Orchid • Patchouli • Vanilla",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Soleil Blanc",
+        brand: "Tom Ford",
+        gender: "unisex",
+        image: null,
+        description: "A creamy solar fragrance with a luxurious warm-weather character.",
+        notes: "Pistachio • Bergamot • Ylang-Ylang • Coconut • Amber",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 7, home: 8,
+            hot: 10, warm: 10, cool: 6, cold: 2, rain: 7, snow: 1,
+            spring: 10, summer: 10, fall: 5, winter: 1,
+            party: 9, date: 10, concert: 9, casual: 10, formal: 6, nightout: 8
+        }
+    },
+
+
+    /* =================================================
+       MAISON FRANCIS KURKDJIAN
+    ================================================= */
+
+    {
+        name: "Baccarat Rouge 540 Eau de Parfum",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A distinctive airy amber fragrance with a sweet woody character.",
+        notes: "Saffron • Jasmine • Amberwood • Ambergris • Fir Resin • Cedar",
+        scores: {
+            city: 10, beach: 5, outdoors: 6, restaurant: 10, school: 3, home: 9,
+            hot: 3, warm: 6, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 6, summer: 3, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Baccarat Rouge 540 Extrait de Parfum",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A richer and denser interpretation of Baccarat Rouge 540.",
+        notes: "Bitter Almond • Saffron • Jasmine • Cedar • Musk",
+        scores: {
+            city: 10, beach: 3, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 2, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 3, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Gentle Fluidity Silver",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A fresh aromatic fragrance with juniper and a clean musky character.",
+        notes: "Juniper Berry • Nutmeg • Coriander • Musks • Amber Woods",
+        scores: {
+            city: 10, beach: 9, outdoors: 10, restaurant: 9, school: 9, home: 8,
+            hot: 10, warm: 10, cool: 9, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 8, date: 9, concert: 8, casual: 10, formal: 9, nightout: 8
+        }
+    },
+
+    {
+        name: "Gentle Fluidity Gold",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A soft musky amber fragrance with a warm elegant character.",
+        notes: "Juniper Berry • Coriander • Nutmeg • Vanilla • Musk • Amber",
+        scores: {
+            city: 9, beach: 4, outdoors: 5, restaurant: 10, school: 4, home: 9,
+            hot: 3, warm: 6, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 5, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "724",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A clean musky floral fragrance inspired by the energy of modern cities.",
+        notes: "Bergamot • Aldehydes • Jasmine • White Musk • Sandalwood",
+        scores: {
+            city: 10, beach: 7, outdoors: 8, restaurant: 9, school: 9, home: 9,
+            hot: 8, warm: 9, cool: 9, cold: 6, rain: 8, snow: 4,
+            spring: 10, summer: 9, fall: 8, winter: 5,
+            party: 8, date: 9, concert: 8, casual: 10, formal: 9, nightout: 8
+        }
+    },
+
+    {
+        name: "Aqua Universalis",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A bright clean citrus musk fragrance with a fresh elegant character.",
+        notes: "Lemon • Bergamot • Lily-of-the-Valley • Musk",
+        scores: {
+            city: 10, beach: 10, outdoors: 10, restaurant: 8, school: 10, home: 9,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 7, date: 8, concert: 7, casual: 10, formal: 8, nightout: 6
+        }
+    },
+
+    {
+        name: "Aqua Media Cologne Forte",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A vibrant citrus aromatic fragrance with a fresh green character.",
+        notes: "Bergamot • Verbena • Sweet Pea • Matcha • Musk",
+        scores: {
+            city: 10, beach: 10, outdoors: 10, restaurant: 8, school: 10, home: 9,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 8, casual: 10, formal: 8, nightout: 7
+        }
+    },
+
+    {
+        name: "L'Homme À la rose",
+        brand: "Maison Francis Kurkdjian",
+        gender: "men",
+        image: null,
+        description: "A fresh modern rose fragrance with a crisp green character.",
+        notes: "Grapefruit • Damask Rose • Centifolia Rose • Sage • Amberwood",
+        scores: {
+            city: 10, beach: 8, outdoors: 9, restaurant: 9, school: 8, home: 8,
+            hot: 9, warm: 10, cool: 9, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 10, fall: 7, winter: 4,
+            party: 8, date: 9, concert: 8, casual: 9, formal: 9, nightout: 8
+        }
+    },
+
+    {
+        name: "724 Eau de Parfum",
+        brand: "Maison Francis Kurkdjian",
+        gender: "unisex",
+        image: null,
+        description: "A luminous clean fragrance combining aldehydes, flowers and musks.",
+        notes: "Aldehydes • Bergamot • Jasmine • White Musk • Sandalwood",
+        scores: {
+            city: 10, beach: 7, outdoors: 8, restaurant: 9, school: 9, home: 9,
+            hot: 8, warm: 9, cool: 9, cold: 6, rain: 8, snow: 4,
+            spring: 10, summer: 9, fall: 8, winter: 5,
+            party: 8, date: 9, concert: 8, casual: 10, formal: 9, nightout: 8
+        }
+    },
+       /* =================================================
+       YVES SAINT LAURENT (YSL)
+    ================================================= */
+
+    {
+        name: "Y Eau de Toilette",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A fresh aromatic fragrance with a clean apple and woody character.",
+        notes: "Apple • Ginger • Sage • Juniper • Cedar • Vetiver",
+        scores: {
+            city: 10, beach: 8, outdoors: 9, restaurant: 8, school: 9, home: 8,
+            hot: 9, warm: 10, cool: 9, cold: 5, rain: 9, snow: 3,
+            spring: 10, summer: 9, fall: 8, winter: 4,
+            party: 9, date: 9, concert: 9, casual: 10, formal: 8, nightout: 9
+        }
+    },
+
+    {
+        name: "Y Eau de Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A deeper aromatic fragrance combining fresh fruit with woods and tonka.",
+        notes: "Apple • Ginger • Sage • Juniper • Amberwood • Tonka Bean",
+        scores: {
+            city: 10, beach: 6, outdoors: 8, restaurant: 10, school: 6, home: 8,
+            hot: 5, warm: 8, cool: 10, cold: 9, rain: 9, snow: 6,
+            spring: 8, summer: 6, fall: 10, winter: 8,
+            party: 10, date: 10, concert: 10, casual: 8, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Y Le Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A darker woody interpretation of Y with a smooth sophisticated character.",
+        notes: "Grapefruit • Ginger • Cedar • Tonka Bean • Patchouli",
+        scores: {
+            city: 10, beach: 4, outdoors: 6, restaurant: 10, school: 4, home: 8,
+            hot: 3, warm: 6, cool: 10, cold: 10, rain: 9, snow: 8,
+            spring: 6, summer: 3, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 9, casual: 6, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "MYSLF Eau de Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A modern woody floral fragrance with a clean citrus opening.",
+        notes: "Bergamot • Orange Blossom • Patchouli • Ambrofix",
+        scores: {
+            city: 10, beach: 7, outdoors: 8, restaurant: 9, school: 8, home: 8,
+            hot: 7, warm: 9, cool: 9, cold: 6, rain: 8, snow: 4,
+            spring: 10, summer: 8, fall: 8, winter: 5,
+            party: 9, date: 10, concert: 9, casual: 10, formal: 9, nightout: 9
+        }
+    },
+
+    {
+        name: "MYSLF Le Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A richer woody interpretation of MYSLF with warm resinous depth.",
+        notes: "Black Pepper • Orange Blossom • Vanilla • Woods",
+        scores: {
+            city: 10, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 8, snow: 9,
+            spring: 4, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 5, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "La Nuit de L'Homme Eau de Toilette",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A smooth spicy aromatic fragrance known for its seductive evening character.",
+        notes: "Cardamom • Lavender • Cedar • Vetiver",
+        scores: {
+            city: 10, beach: 3, outdoors: 5, restaurant: 10, school: 3, home: 9,
+            hot: 3, warm: 6, cool: 10, cold: 9, rain: 8, snow: 7,
+            spring: 6, summer: 3, fall: 10, winter: 9,
+            party: 10, date: 10, concert: 10, casual: 6, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "La Nuit de L'Homme Bleu Électrique",
+        brand: "Yves Saint Laurent",
+        gender: "men",
+        image: null,
+        description: "A fresh spicy interpretation of La Nuit de L'Homme.",
+        notes: "Cardamom • Ginger • Cedar • Lavender • Vetiver",
+        scores: {
+            city: 10, beach: 5, outdoors: 7, restaurant: 10, school: 5, home: 8,
+            hot: 5, warm: 8, cool: 10, cold: 9, rain: 9, snow: 6,
+            spring: 8, summer: 5, fall: 10, winter: 8,
+            party: 10, date: 10, concert: 10, casual: 7, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Libre Eau de Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "women",
+        image: null,
+        description: "A modern floral fragrance balancing lavender, orange blossom and vanilla.",
+        notes: "Lavender • Orange Blossom • Jasmine • Vanilla • Musk",
+        scores: {
+            city: 10, beach: 5, outdoors: 6, restaurant: 10, school: 6, home: 9,
+            hot: 4, warm: 7, cool: 10, cold: 9, rain: 8, snow: 7,
+            spring: 8, summer: 4, fall: 10, winter: 9,
+            party: 10, date: 10, concert: 9, casual: 6, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Libre Intense",
+        brand: "Yves Saint Laurent",
+        gender: "women",
+        image: null,
+        description: "A richer and warmer interpretation of Libre with vanilla and amber depth.",
+        notes: "Lavender • Orange Blossom • Orchid • Vanilla • Tonka",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 1, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 3, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Libre Le Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "women",
+        image: null,
+        description: "A warm spicy floral fragrance with a rich honey and vanilla character.",
+        notes: "Saffron • Ginger • Orange Blossom • Lavender • Honey • Vanilla",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 10,
+            hot: 1, warm: 3, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Black Opium Eau de Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "women",
+        image: null,
+        description: "A sweet coffee vanilla fragrance with a warm sensual character.",
+        notes: "Coffee • Pear • Orange Blossom • Vanilla • Cedar • Patchouli",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 10,
+            hot: 1, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 4, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Black Opium Le Parfum",
+        brand: "Yves Saint Laurent",
+        gender: "women",
+        image: null,
+        description: "A rich gourmand version of Black Opium with a stronger vanilla character.",
+        notes: "Coffee • Jasmine • Vanilla • Patchouli",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 10,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 9, nightout: 10
+        }
+    },
+
+
+    /* =================================================
+       DIOR
+    ================================================= */
+
+    {
+        name: "Sauvage Eau de Toilette",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A fresh spicy aromatic fragrance with a powerful versatile character.",
+        notes: "Bergamot • Pepper • Lavender • Ambroxan • Cedar",
+        scores: {
+            city: 10, beach: 8, outdoors: 10, restaurant: 9, school: 8, home: 8,
+            hot: 9, warm: 10, cool: 9, cold: 6, rain: 9, snow: 4,
+            spring: 10, summer: 9, fall: 8, winter: 5,
+            party: 10, date: 9, concert: 10, casual: 10, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Sauvage Eau de Parfum",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A deeper and smoother interpretation of Sauvage with vanilla-like warmth.",
+        notes: "Bergamot • Sichuan Pepper • Lavender • Vanilla • Ambroxan",
+        scores: {
+            city: 10, beach: 5, outdoors: 7, restaurant: 10, school: 5, home: 8,
+            hot: 4, warm: 7, cool: 10, cold: 9, rain: 9, snow: 6,
+            spring: 7, summer: 5, fall: 10, winter: 8,
+            party: 10, date: 10, concert: 10, casual: 7, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Sauvage Elixir",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A highly concentrated spicy woody fragrance with powerful projection.",
+        notes: "Grapefruit • Cinnamon • Nutmeg • Lavender • Licorice • Sandalwood",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Dior Homme Intense",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A sophisticated iris fragrance with a smooth woody amber character.",
+        notes: "Iris • Lavender • Pear • Ambrette • Cedar • Vetiver",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 9,
+            hot: 2, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 4, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Dior Homme Parfum",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A rich luxurious iris and leather fragrance with deep woody character.",
+        notes: "Iris • Leather • Sandalwood • Oud",
+        scores: {
+            city: 10, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 9,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 9, date: 10, concert: 8, casual: 2, formal: 10, nightout: 10
+        }
+    },
+
+    {
+        name: "Dior Homme Sport",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A fresh citrus woody fragrance designed for energetic everyday wear.",
+        notes: "Bergamot • Lemon • Aldehydes • Pink Pepper • Woods",
+        scores: {
+            city: 10, beach: 9, outdoors: 10, restaurant: 8, school: 10, home: 8,
+            hot: 10, warm: 10, cool: 8, cold: 3, rain: 9, snow: 2,
+            spring: 10, summer: 10, fall: 6, winter: 2,
+            party: 8, date: 8, concert: 9, casual: 10, formal: 6, nightout: 7
+        }
+    },
+
+    {
+        name: "Fahrenheit Eau de Toilette",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A distinctive classic fragrance combining leather, woods and violet leaf.",
+        notes: "Violet Leaf • Leather • Nutmeg • Cedar • Vetiver",
+        scores: {
+            city: 9, beach: 2, outdoors: 5, restaurant: 9, school: 3, home: 8,
+            hot: 2, warm: 5, cool: 10, cold: 10, rain: 9, snow: 9,
+            spring: 4, summer: 2, fall: 10, winter: 10,
+            party: 8, date: 9, concert: 8, casual: 5, formal: 9, nightout: 9
+        }
+    },
+
+    {
+        name: "Miss Dior Eau de Parfum",
+        brand: "Dior",
+        gender: "women",
+        image: null,
+        description: "A modern floral fragrance with rose, peony and woody warmth.",
+        notes: "Iris • Peony • Rose • Lily-of-the-Valley • Vanilla • Woods",
+        scores: {
+            city: 10, beach: 6, outdoors: 7, restaurant: 10, school: 7, home: 9,
+            hot: 6, warm: 8, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 9, date: 10, concert: 8, casual: 8, formal: 10, nightout: 9
+        }
+    },
+
+    {
+        name: "J'adore Eau de Parfum",
+        brand: "Dior",
+        gender: "women",
+        image: null,
+        description: "A classic elegant floral fragrance with a luxurious feminine character.",
+        notes: "Ylang-Ylang • Jasmine • Rose • Tuberose • Violet",
+        scores: {
+            city: 10, beach: 6, outdoors: 7, restaurant: 10, school: 7, home: 9,
+            hot: 6, warm: 8, cool: 9, cold: 7, rain: 8, snow: 5,
+            spring: 10, summer: 8, fall: 8, winter: 6,
+            party: 9, date: 10, concert: 8, casual: 7, formal: 10, nightout: 9
+        }
+    },
+
+    {
+        name: "Dior Addict Eau de Parfum",
+        brand: "Dior",
+        gender: "women",
+        image: null,
+        description: "A rich vanilla floral fragrance with a warm sensual character.",
+        notes: "Mandarin Leaf • Jasmine • Orange Blossom • Bourbon Vanilla",
+        scores: {
+            city: 10, beach: 2, outdoors: 4, restaurant: 10, school: 2, home: 10,
+            hot: 1, warm: 4, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 3, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 3, formal: 9, nightout: 10
+        }
+    },
+
+    {
+        name: "Hypnotic Poison Eau de Toilette",
+        brand: "Dior",
+        gender: "women",
+        image: null,
+        description: "A warm almond vanilla fragrance with a distinctive seductive character.",
+        notes: "Bitter Almond • Jasmine • Vanilla • Musk",
+        scores: {
+            city: 9, beach: 1, outdoors: 3, restaurant: 10, school: 1, home: 10,
+            hot: 1, warm: 2, cool: 10, cold: 10, rain: 9, snow: 10,
+            spring: 2, summer: 1, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 2, formal: 8, nightout: 10
+        }
+    },
+
+    {
+        name: "Dioriviera",
+        brand: "Dior",
+        gender: "women",
+        image: null,
+        description: "A bright floral fragrance inspired by the atmosphere of the French Riviera.",
+        notes: "Rose • Fig • Rose Water",
+        scores: {
+            city: 9, beach: 10, outdoors: 10, restaurant: 8, school: 8, home: 8,
+            hot: 10, warm: 10, cool: 7, cold: 2, rain: 7, snow: 1,
+            spring: 10, summer: 10, fall: 5, winter: 1,
+            party: 9, date: 9, concert: 9, casual: 10, formal: 6, nightout: 8
+        }
+    },
+
+    {
+        name: "Sauvage Parfum",
+        brand: "Dior",
+        gender: "men",
+        image: null,
+        description: "A smoother and warmer interpretation of Sauvage with creamy sandalwood.",
+        notes: "Mandarin • Bergamot • Sandalwood • Tonka Bean • Vanilla",
+        scores: {
+            city: 10, beach: 4, outdoors: 6, restaurant: 10, school: 4, home: 9,
+            hot: 3, warm: 6, cool: 10, cold: 10, rain: 9, snow: 8,
+            spring: 5, summer: 2, fall: 10, winter: 10,
+            party: 10, date: 10, concert: 10, casual: 5, formal: 10, nightout: 10
+        }
     }
 ];
+
 
 
 /* =====================================================
