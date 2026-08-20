@@ -5497,21 +5497,23 @@ if (searchInput && searchResults) {
 
 
                 // Click result
-                result.addEventListener(
-                    "click",
-                    function() {
+           result.addEventListener(
+    "click",
+    function() {
 
-                        searchInput.value =
-                            fragrance.name;
+        searchInput.value =
+            fragrance.name;
 
-                        searchResults.innerHTML = "";
+        searchResults.innerHTML = "";
 
-                        showSearchedFragrance(
-                            fragrance
-                        );
+        showSearchedFragrance(
+            fragrance
+        );
 
-                    }
-                );
+        addToCompare(fragrance);
+
+    }
+);
 
 
                 searchResults.appendChild(result);
