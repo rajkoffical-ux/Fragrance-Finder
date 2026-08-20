@@ -5402,3 +5402,182 @@ document
             });
 
     });
+/* =====================================================
+   FRAGRANCE SEARCH
+===================================================== */
+
+const searchInput =
+    document.querySelector("#fragrance-search-input");
+
+const searchResults =
+    document.querySelector("#fragrance-search-results");
+
+
+if (searchInput && searchResults) {
+
+    searchInput.addEventListener("input", function() {
+
+        const searchTerm =
+            searchInput.value
+                .trim()
+                .toLowerCase();
+
+
+        searchResults.innerHTML = "";
+
+
+        // Nothing typed
+        if (!searchTerm) {
+            return;
+        }
+
+
+        // Search the existing fragrance database
+        const matches =
+            fragrances.filter(function(fragrance) {
+
+                return (
+                    fragrance.name
+                        .toLowerCase()
+                        .includes(searchTerm)
+
+                    ||
+
+                    fragrance.brand
+                        .toLowerCase()
+                        .includes(searchTerm)
+                );
+
+            });
+
+
+        // Nothing found
+        if (matches.length === 0) {
+
+            searchResults.innerHTML = `
+                <div class="search-no-results">
+                    No fragrances found.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        // Show maximum 10 results
+        matches
+            .slice(0, 10)
+            .forEach(function(fragrance) {
+
+                const result =
+                    document.createElement("div");
+
+                result.className =
+                    "fragrance-search-result";
+
+
+                result.innerHTML = `
+
+                    <strong>
+                        ${fragrance.name}
+                    </strong>
+
+                    <span>
+                        ${fragrance.brand}
+                        •
+                        ${fragrance.gender === "men"
+                            ? "Men's"
+                            : fragrance.gender === "women"
+                                ? "Women's"
+                                : "Unisex"}
+                    </span>
+
+                `;
+
+
+                // Click result
+                result.addEventListener(
+                    "click",
+                    function() {
+
+                        searchInput.value =
+                            fragrance.name;
+
+                        searchResults.innerHTML = "";
+
+                        showSearchedFragrance(
+                            fragrance
+                        );
+
+                    }
+                );
+
+
+                searchResults.appendChild(result);
+
+            });
+
+    });
+
+}
+
+
+/* =====================================================
+   SHOW SEARCHED FRAGRANCE
+===================================================== */
+
+function showSearchedFragrance(fragrance) {
+
+    const container =
+        document.querySelector("#results-container");
+
+
+    container.innerHTML = `
+
+        <div class="searched-fragrance-card">
+
+            <div class="type">
+                ${fragrance.brand}
+                •
+                ${fragrance.gender === "men"
+                    ? "Men's"
+                    : fragrance.gender === "women"
+                        ? "Women's"
+                        : "Unisex"}
+            </div>
+
+            <h2>
+                ${fragrance.name}
+            </h2>
+
+            <p>
+                ${fragrance.description}
+            </p>
+
+            <div class="notes">
+
+                <strong>
+                    Key notes:
+                </strong>
+
+                ${fragrance.notes}
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document
+        .querySelector(".results")
+        .classList.remove("hidden");
+
+
+    document
+        .querySelector(".results")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+}
