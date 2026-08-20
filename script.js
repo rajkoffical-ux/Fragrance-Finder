@@ -5583,3 +5583,403 @@ function showSearchedFragrance(fragrance) {
         });
 
 }
+
+/* =====================================================
+   FRAGRANCE COMPARISON
+===================================================== */
+
+let compareFragrance1 = null;
+let compareFragrance2 = null;
+
+
+/* -----------------------------------------------------
+   ADD FRAGRANCE TO COMPARISON
+----------------------------------------------------- */
+
+function addToCompare(fragrance) {
+
+    if (
+        compareFragrance1 &&
+        compareFragrance1.name === fragrance.name
+    ) {
+        return;
+    }
+
+    if (
+        compareFragrance2 &&
+        compareFragrance2.name === fragrance.name
+    ) {
+        return;
+    }
+
+
+    if (!compareFragrance1) {
+
+        compareFragrance1 = fragrance;
+
+    } else if (!compareFragrance2) {
+
+        compareFragrance2 = fragrance;
+
+    } else {
+
+        // Replace second fragrance
+        compareFragrance2 = fragrance;
+
+    }
+
+
+    updateCompareSlots();
+
+}
+
+
+/* -----------------------------------------------------
+   UPDATE COMPARISON SLOTS
+----------------------------------------------------- */
+
+function updateCompareSlots() {
+
+    const slot1 =
+        document.querySelector("#compare-slot-1");
+
+    const slot2 =
+        document.querySelector("#compare-slot-2");
+
+    const compareButton =
+        document.querySelector("#compare-button");
+
+
+    if (compareFragrance1) {
+
+        slot1.innerHTML = `
+
+            <span>
+                Fragrance 1
+            </span>
+
+            <strong>
+                ${compareFragrance1.name}
+            </strong>
+
+            <small>
+                ${compareFragrance1.brand}
+            </small>
+
+        `;
+
+    } else {
+
+        slot1.innerHTML = `
+
+            <span>
+                Fragrance 1
+            </span>
+
+            <strong>
+                Select a fragrance
+            </strong>
+
+        `;
+
+    }
+
+
+    if (compareFragrance2) {
+
+        slot2.innerHTML = `
+
+            <span>
+                Fragrance 2
+            </span>
+
+            <strong>
+                ${compareFragrance2.name}
+            </strong>
+
+            <small>
+                ${compareFragrance2.brand}
+            </small>
+
+        `;
+
+    } else {
+
+        slot2.innerHTML = `
+
+            <span>
+                Fragrance 2
+            </span>
+
+            <strong>
+                Select a fragrance
+            </strong>
+
+        `;
+
+    }
+
+
+    compareButton.disabled =
+        !(compareFragrance1 && compareFragrance2);
+
+}
+
+
+/* -----------------------------------------------------
+   COMPARE BUTTON
+----------------------------------------------------- */
+
+const compareButton =
+    document.querySelector("#compare-button");
+
+
+if (compareButton) {
+
+    compareButton.addEventListener(
+        "click",
+        function() {
+
+            if (
+                !compareFragrance1 ||
+                !compareFragrance2
+            ) {
+                return;
+            }
+
+            displayComparison(
+                compareFragrance1,
+                compareFragrance2
+            );
+
+        }
+    );
+
+}
+
+
+/* -----------------------------------------------------
+   DISPLAY COMPARISON
+----------------------------------------------------- */
+
+function displayComparison(first, second) {
+
+    const container =
+        document.querySelector("#compare-results");
+
+
+    container.innerHTML = `
+
+        <div class="comparison-card">
+
+            <div class="comparison-header">
+
+                <div>
+                    <span>${first.brand}</span>
+
+                    <h3>
+                        ${first.name}
+                    </h3>
+                </div>
+
+                <div class="comparison-vs-large">
+                    VS
+                </div>
+
+                <div>
+                    <span>${second.brand}</span>
+
+                    <h3>
+                        ${second.name}
+                    </h3>
+                </div>
+
+            </div>
+
+
+            <!-- GENDER -->
+
+            <div class="comparison-row">
+
+                <strong>
+                    Gender
+                </strong>
+
+                <span>
+                    ${formatGender(first.gender)}
+                </span>
+
+                <span>
+                    ${formatGender(second.gender)}
+                </span>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div class="comparison-row">
+
+                <strong>
+                    Description
+                </strong>
+
+                <span>
+                    ${first.description}
+                </span>
+
+                <span>
+                    ${second.description}
+                </span>
+
+            </div>
+
+
+            <!-- NOTES -->
+
+            <div class="comparison-row">
+
+                <strong>
+                    Key Notes
+                </strong>
+
+                <span>
+                    ${first.notes}
+                </span>
+
+                <span>
+                    ${second.notes}
+                </span>
+
+            </div>
+
+
+            <!-- SCORES -->
+
+            <div class="comparison-row">
+
+                <strong>
+                    Summer
+                </strong>
+
+                <span>
+                    ${getScore(first, "summer")}
+                </span>
+
+                <span>
+                    ${getScore(second, "summer")}
+                </span>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <strong>
+                    Winter
+                </strong>
+
+                <span>
+                    ${getScore(first, "winter")}
+                </span>
+
+                <span>
+                    ${getScore(second, "winter")}
+                </span>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <strong>
+                    Date
+                </strong>
+
+                <span>
+                    ${getScore(first, "date")}
+                </span>
+
+                <span>
+                    ${getScore(second, "date")}
+                </span>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <strong>
+                    Casual
+                </strong>
+
+                <span>
+                    ${getScore(first, "casual")}
+                </span>
+
+                <span>
+                    ${getScore(second, "casual")}
+                </span>
+
+            </div>
+
+
+            <div class="comparison-row">
+
+                <strong>
+                    Formal
+                </strong>
+
+                <span>
+                    ${getScore(first, "formal")}
+                </span>
+
+                <span>
+                    ${getScore(second, "formal")}
+                </span>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    container.scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+/* -----------------------------------------------------
+   HELPERS
+----------------------------------------------------- */
+
+function formatGender(gender) {
+
+    if (gender === "men") {
+        return "Men's";
+    }
+
+    if (gender === "women") {
+        return "Women's";
+    }
+
+    return "Unisex";
+
+}
+
+
+function getScore(fragrance, category) {
+
+    if (
+        !fragrance.scores ||
+        fragrance.scores[category] === undefined
+    ) {
+        return "N/A";
+    }
+
+    return fragrance.scores[category] + "/10";
+
+}
