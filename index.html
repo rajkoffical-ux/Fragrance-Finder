@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Fragrance Finder</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
+
+    <!-- =================================================
+         TOP NAVIGATION
+    ================================================== -->
+
+    <nav class="top-nav">
+
+        <div class="nav-logo">
+            Fragrance Finder
+        </div>
+
+
+        <div class="nav-tabs">
+
+            <button
+                class="nav-tab active"
+                data-tab="find">
+                FIND
+            </button>
+
+
+            <button
+                class="nav-tab"
+                data-tab="search">
+                SEARCH
+            </button>
+
+
+            <button
+                class="nav-tab"
+                data-tab="compare">
+                COMPARE
+            </button>
+
+
+            <button
+                class="nav-tab"
+                data-tab="battle">
+                BATTLES
+            </button>
+
+
+            <button
+                class="nav-tab"
+                data-tab="surprise">
+                SURPRISE ME
+            </button>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =================================================
+         HERO
+    ================================================== -->
+
     <header class="hero">
+
         <div class="hero-content">
-            <p class="eyebrow">THE FRAGRANCE FINDER</p>
+
+            <p class="eyebrow">
+                THE FRAGRANCE FINDER
+            </p>
+
 
             <h1>
                 Find Your<br>
                 <span>Perfect Scent.</span>
             </h1>
+
 
             <p class="hero-description">
                 Tell us where you're going, what the weather is like,
@@ -26,378 +96,722 @@
                 fragrance that fits the moment.
             </p>
 
-            <button class="start-button" id="startButton">
+
+            <button
+                class="start-button"
+                id="startButton">
+
                 FIND MY FRAGRANCE
+
             </button>
+
         </div>
+
     </header>
+
 
 
     <main>
 
-        <section class="finder" id="finder">
+
+        <!-- =================================================
+             FIND TAB
+        ================================================== -->
+
+        <section
+            class="finder tab-page tab-active"
+            id="find-tab">
 
             <div class="section-heading">
-                <p class="eyebrow">THE FINDER</p>
 
-                <h2>Build Your Moment</h2>
+                <p class="eyebrow">
+                    THE FINDER
+                </p>
+
+
+                <h2>
+                    Build Your Moment
+                </h2>
+
 
                 <p>
                     Choose your conditions and we'll calculate
                     the fragrances that fit them best.
                 </p>
+
             </div>
+
 
 
             <!-- GENDER -->
 
             <div class="question">
-                <label>Who are you shopping for?</label>
+
+                <label>
+                    Who are you shopping for?
+                </label>
+
 
                 <div class="options">
 
-                    <button class="option gender-option selected"
-                            data-value="men">
+                    <button
+                        class="option gender-option selected"
+                        data-value="men">
+
                         <span>♂</span>
                         Men's
+
                     </button>
 
-                    <button class="option gender-option"
-                            data-value="women">
+
+                    <button
+                        class="option gender-option"
+                        data-value="women">
+
                         <span>♀</span>
                         Women's
+
                     </button>
 
                 </div>
+
             </div>
+
 
 
             <!-- PLACE -->
 
             <div class="question">
-                <label>Where are you going?</label>
+
+                <label>
+                    Where are you going?
+                </label>
+
 
                 <div class="options">
 
-                    <button class="option place-option" data-value="city">
+                    <button
+                        class="option place-option"
+                        data-value="city">
+
                         🏙️ City
+
                     </button>
 
-                    <button class="option place-option" data-value="beach">
+
+                    <button
+                        class="option place-option"
+                        data-value="beach">
+
                         🏖️ Beach
+
                     </button>
 
-                    <button class="option place-option" data-value="outdoors">
+
+                    <button
+                        class="option place-option"
+                        data-value="outdoors">
+
                         🌲 Outdoors
+
                     </button>
 
-                    <button class="option place-option" data-value="restaurant">
+
+                    <button
+                        class="option place-option"
+                        data-value="restaurant">
+
                         🍽️ Restaurant
+
                     </button>
 
-                    <button class="option place-option" data-value="school">
+
+                    <button
+                        class="option place-option"
+                        data-value="school">
+
                         🎓 School
+
                     </button>
 
-                    <button class="option place-option" data-value="home">
+
+                    <button
+                        class="option place-option"
+                        data-value="home">
+
                         🏠 Home
+
                     </button>
 
                 </div>
+
             </div>
+
 
 
             <!-- WEATHER -->
 
             <div class="question">
-                <label>What's the weather like?</label>
+
+                <label>
+                    What's the weather like?
+                </label>
+
 
                 <div class="options">
 
-                    <button class="option weather-option" data-value="hot">
+                    <button
+                        class="option weather-option"
+                        data-value="hot">
+
                         ☀️ Hot
+
                     </button>
 
-                    <button class="option weather-option" data-value="warm">
+
+                    <button
+                        class="option weather-option"
+                        data-value="warm">
+
                         🌤️ Warm
+
                     </button>
 
-                    <button class="option weather-option" data-value="cool">
+
+                    <button
+                        class="option weather-option"
+                        data-value="cool">
+
                         🌥️ Cool
+
                     </button>
 
-                    <button class="option weather-option" data-value="cold">
+
+                    <button
+                        class="option weather-option"
+                        data-value="cold">
+
                         ❄️ Cold
+
                     </button>
 
-                    <button class="option weather-option" data-value="rain">
+
+                    <button
+                        class="option weather-option"
+                        data-value="rain">
+
                         🌧️ Rainy
+
                     </button>
 
-                    <button class="option weather-option" data-value="snow">
+
+                    <button
+                        class="option weather-option"
+                        data-value="snow">
+
                         🌨️ Snowy
+
                     </button>
 
                 </div>
+
             </div>
+
 
 
             <!-- SEASON -->
 
             <div class="question">
-                <label>What season is it?</label>
+
+                <label>
+                    What season is it?
+                </label>
+
 
                 <div class="options">
 
-                    <button class="option season-option" data-value="spring">
+                    <button
+                        class="option season-option"
+                        data-value="spring">
+
                         🌱 Spring
+
                     </button>
 
-                    <button class="option season-option" data-value="summer">
+
+                    <button
+                        class="option season-option"
+                        data-value="summer">
+
                         ☀️ Summer
+
                     </button>
 
-                    <button class="option season-option" data-value="fall">
+
+                    <button
+                        class="option season-option"
+                        data-value="fall">
+
                         🍂 Fall
+
                     </button>
 
-                    <button class="option season-option" data-value="winter">
+
+                    <button
+                        class="option season-option"
+                        data-value="winter">
+
                         ❄️ Winter
+
                     </button>
 
                 </div>
+
             </div>
 
-            <!-- FRAGRANCE SEARCH -->
-
-<div class="fragrance-search">
-
-    <h2>Search a Fragrance</h2>
-
-    <p>
-        Looking for something specific?
-        Search for a fragrance or brand.
-    </p>
-
-    <input
-        type="text"
-        id="fragrance-search-input"
-        placeholder="Search fragrances..."
-        autocomplete="off"
-    >
-
-    <div id="fragrance-search-results"></div>
-
-   <p class="compare-hint">
-    Search and select a fragrance to add it to Compare.
-</p>
-    
-
-</div>
-
-            <!-- COMPARE FRAGRANCES -->
-
-<div class="compare-section">
-
-    <div class="section-heading">
-        <p class="eyebrow">COMPARE</p>
-
-        <h2>Compare Fragrances</h2>
-
-        <p>
-            Pick two fragrances and see how they compare.
-        </p>
-    </div>
-
-    <div class="compare-slots">
-
-        <div class="compare-slot" id="compare-slot-1">
-            <span>Fragrance 1</span>
-            <strong>Select a fragrance</strong>
-        </div>
-
-        <div class="compare-vs">
-            VS
-        </div>
-
-        <div class="compare-slot" id="compare-slot-2">
-            <span>Fragrance 2</span>
-            <strong>Select a fragrance</strong>
-        </div>
-
-    </div>
-
-    <button
-        class="compare-button"
-        id="compare-button"
-        disabled>
-        COMPARE
-    </button>
-
-    <div
-        id="compare-results"
-        class="compare-results">
-    </div>
-
-</div>
-            
-            <!-- FRAGRANCE BATTLE -->
-
-<section class="battle-section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            FRAGRANCE BATTLE
-        </p>
-
-        <h2>
-            Which One Wins?
-        </h2>
-
-        <p>
-            Two fragrances enter. You choose the winner.
-        </p>
-
-    </div>
-
-
-    <div class="battle-container">
-
-        <div class="battle-card">
-
-            <span
-                id="battle-brand-1"
-                class="battle-brand">
-            </span>
-
-            <h3 id="battle-name-1">
-                Loading...
-            </h3>
-
-            <p id="battle-description-1">
-            </p>
-
-            <button
-                id="battle-choice-1"
-                class="battle-choice">
-
-                PICK THIS
-
-            </button>
-
-        </div>
-
-
-        <div class="battle-vs">
-            VS
-        </div>
-
-
-        <div class="battle-card">
-
-            <span
-                id="battle-brand-2"
-                class="battle-brand">
-            </span>
-
-            <h3 id="battle-name-2">
-                Loading...
-            </h3>
-
-            <p id="battle-description-2">
-            </p>
-
-            <button
-                id="battle-choice-2"
-                class="battle-choice">
-
-                PICK THIS
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-    <div
-        id="battle-result"
-        class="battle-result">
-    </div>
-
-
-    <button
-        id="new-battle-button"
-        class="new-battle-button">
-
-        NEW BATTLE
-
-    </button>
-
-</section>
 
 
             <!-- ENTERTAINMENT -->
 
             <div class="question">
-                <label>What are you doing?</label>
+
+                <label>
+                    What are you doing?
+                </label>
+
 
                 <div class="options">
 
-                    <button class="option entertainment-option" data-value="party">
+                    <button
+                        class="option entertainment-option"
+                        data-value="party">
+
                         🎉 Party
+
                     </button>
 
-                    <button class="option entertainment-option" data-value="date">
+
+                    <button
+                        class="option entertainment-option"
+                        data-value="date">
+
                         ❤️ Date
+
                     </button>
 
-                    <button class="option entertainment-option" data-value="concert">
+
+                    <button
+                        class="option entertainment-option"
+                        data-value="concert">
+
                         🎵 Concert
+
                     </button>
 
-                    <button class="option entertainment-option" data-value="casual">
+
+                    <button
+                        class="option entertainment-option"
+                        data-value="casual">
+
                         👟 Casual
+
                     </button>
 
-                    <button class="option entertainment-option" data-value="formal">
+
+                    <button
+                        class="option entertainment-option"
+                        data-value="formal">
+
                         🕴️ Formal
+
                     </button>
 
-                    <button class="option entertainment-option" data-value="nightout">
+
+                    <button
+                        class="option entertainment-option"
+                        data-value="nightout">
+
                         🌃 Night Out
+
                     </button>
 
                 </div>
+
             </div>
 
 
-            <button class="find-button" id="findButton">
+
+            <!-- FIND BUTTON -->
+
+            <button
+                class="find-button"
+                id="findButton">
+
                 FIND MY MATCH
+
             </button>
 
         </section>
 
 
-        <!-- RESULTS -->
 
-        <section class="results hidden" id="results">
+        <!-- =================================================
+             SEARCH TAB
+        ================================================== -->
+
+        <section
+            class="search-page tab-page"
+            id="search-tab">
 
             <div class="section-heading">
 
-                <p class="eyebrow">YOUR RESULTS</p>
+                <p class="eyebrow">
+                    SEARCH
+                </p>
 
-                <h2>Your Best Matches</h2>
 
-                <p id="result-description"></p>
+                <h2>
+                    Find A Fragrance
+                </h2>
+
+
+                <p>
+                    Search for a fragrance or brand.
+                </p>
 
             </div>
 
-            <div id="results-container"></div>
 
-            <button class="again-button" id="againButton">
+
+            <div class="fragrance-search">
+
+                <h2>
+                    Search a Fragrance
+                </h2>
+
+
+                <p>
+                    Search and select a fragrance to add it to Compare.
+                </p>
+
+
+                <input
+                    type="text"
+                    id="fragrance-search-input"
+                    placeholder="Search fragrances..."
+                    autocomplete="off"
+                >
+
+
+                <div
+                    id="fragrance-search-results">
+                </div>
+
+
+                <p class="compare-hint">
+                    Search and select a fragrance to add it to Compare.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             COMPARE TAB
+        ================================================== -->
+
+        <section
+            class="compare-section tab-page"
+            id="compare-tab">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    COMPARE
+                </p>
+
+
+                <h2>
+                    Compare Fragrances
+                </h2>
+
+
+                <p>
+                    Pick two fragrances and see how they compare.
+                </p>
+
+            </div>
+
+
+
+            <div class="compare-slots">
+
+
+                <div
+                    class="compare-slot"
+                    id="compare-slot-1">
+
+                    <span>
+                        Fragrance 1
+                    </span>
+
+
+                    <strong>
+                        Select a fragrance
+                    </strong>
+
+                </div>
+
+
+
+                <div class="compare-vs">
+                    VS
+                </div>
+
+
+
+                <div
+                    class="compare-slot"
+                    id="compare-slot-2">
+
+                    <span>
+                        Fragrance 2
+                    </span>
+
+
+                    <strong>
+                        Select a fragrance
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <button
+                class="compare-button"
+                id="compare-button"
+                disabled>
+
+                COMPARE
+
+            </button>
+
+
+
+            <div
+                id="compare-results"
+                class="compare-results">
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BATTLE TAB
+        ================================================== -->
+
+        <section
+            class="battle-section tab-page"
+            id="battle-tab">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    FRAGRANCE BATTLE
+                </p>
+
+
+                <h2>
+                    Which One Wins?
+                </h2>
+
+
+                <p>
+                    Two fragrances enter. You choose the winner.
+                </p>
+
+            </div>
+
+
+
+            <div class="battle-container">
+
+
+                <div class="battle-card">
+
+                    <span
+                        id="battle-brand-1"
+                        class="battle-brand">
+                    </span>
+
+
+                    <h3 id="battle-name-1">
+                        Loading...
+                    </h3>
+
+
+                    <p id="battle-description-1">
+                    </p>
+
+
+                    <button
+                        id="battle-choice-1"
+                        class="battle-choice">
+
+                        PICK THIS
+
+                    </button>
+
+                </div>
+
+
+
+                <div class="battle-vs">
+                    VS
+                </div>
+
+
+
+                <div class="battle-card">
+
+                    <span
+                        id="battle-brand-2"
+                        class="battle-brand">
+                    </span>
+
+
+                    <h3 id="battle-name-2">
+                        Loading...
+                    </h3>
+
+
+                    <p id="battle-description-2">
+                    </p>
+
+
+                    <button
+                        id="battle-choice-2"
+                        class="battle-choice">
+
+                        PICK THIS
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <div
+                id="battle-result"
+                class="battle-result">
+            </div>
+
+
+
+            <button
+                id="new-battle-button"
+                class="new-battle-button">
+
+                NEW BATTLE
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SURPRISE ME TAB
+        ================================================== -->
+
+        <section
+            class="surprise-section tab-page"
+            id="surprise-tab">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    CAN'T DECIDE?
+                </p>
+
+
+                <h2>
+                    Surprise Me
+                </h2>
+
+
+                <p>
+                    Let us choose a fragrance for you.
+                </p>
+
+            </div>
+
+
+
+            <button
+                id="surprise-button"
+                class="surprise-button">
+
+                🎲 SURPRISE ME
+
+            </button>
+
+
+
+            <div
+                id="surprise-result"
+                class="surprise-result">
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESULTS
+        ================================================== -->
+
+        <section
+            class="results hidden"
+            id="results">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    YOUR RESULTS
+                </p>
+
+
+                <h2>
+                    Your Best Matches
+                </h2>
+
+
+                <p id="result-description">
+                </p>
+
+            </div>
+
+
+
+            <div id="results-container">
+            </div>
+
+
+
+            <button
+                class="again-button"
+                id="againButton">
+
                 START OVER
+
             </button>
 
         </section>
@@ -405,9 +819,17 @@
     </main>
 
 
+
+    <!-- =================================================
+         FOOTER
+    ================================================== -->
+
     <footer>
 
-        <p>Fragrance Finder</p>
+        <p>
+            Fragrance Finder
+        </p>
+
 
         <p class="disclaimer">
             An independent fragrance recommendation project.
@@ -416,45 +838,9 @@
     </footer>
 
 
+
     <script src="script.js"></script>
 
 </body>
+
 </html>
-
-
-<!-- SURPRISE ME -->
-
-<section class="surprise-section">
-
-    <div class="section-heading">
-
-        <p class="eyebrow">
-            CAN'T DECIDE?
-        </p>
-
-        <h2>
-            Surprise Me
-        </h2>
-
-        <p>
-            Let us choose a fragrance for you.
-        </p>
-
-    </div>
-
-
-    <button
-        id="surprise-button"
-        class="surprise-button">
-
-        🎲 SURPRISE ME
-
-    </button>
-
-
-    <div
-        id="surprise-result"
-        class="surprise-result">
-    </div>
-
-</section>
