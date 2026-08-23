@@ -829,3 +829,89 @@ footer p:first-child {
     margin-top: 10px; 
 
 }
+
+    
+    /* =====================================================
+   SURPRISE ME
+===================================================== */
+
+.surprise-section {
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 80px auto;
+
+    text-align: center;
+}
+
+
+.surprise-button {
+    padding: 16px 32px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    transition: 0.2s ease;
+}
+
+
+.surprise-button:hover {
+    transform: translateY(-3px);
+}
+
+
+.surprise-result {
+    margin-top: 35px;
+}
+
+
+.surprise-card {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+
+.surprise-brand {
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    opacity: 0.55;
+}
+
+
+.surprise-card h3 {
+    font-size: 30px;
+
+    margin: 12px 0 15px;
+}
+
+
+.surprise-card p {
+    opacity: 0.7;
+
+    line-height: 1.6;
+}
+
+
+.surprise-notes {
+    margin-top: 20px;
+
+    font-size: 14px;
+}
