@@ -6164,3 +6164,79 @@ document
 /* Start first battle */
 
 startNewBattle();
+
+}
+
+/* =====================================================
+   SURPRISE ME
+===================================================== */
+
+document
+    .querySelector("#surprise-button")
+    .addEventListener(
+        "click",
+        function() {
+
+            if (!fragrances || fragrances.length === 0) {
+                return;
+            }
+
+
+            const randomIndex =
+                Math.floor(
+                    Math.random() *
+                    fragrances.length
+                );
+
+
+            const fragrance =
+                fragrances[randomIndex];
+
+
+            const result =
+                document.querySelector(
+                    "#surprise-result"
+                );
+
+
+            result.innerHTML = `
+
+                <div class="surprise-card">
+
+                    <span class="surprise-brand">
+
+                        ${fragrance.brand}
+
+                    </span>
+
+
+                    <h3>
+
+                        ${fragrance.name}
+
+                    </h3>
+
+
+                    <p>
+
+                        ${fragrance.description || ""}
+
+                    </p>
+
+
+                    <div class="surprise-notes">
+
+                        <strong>
+                            Key notes:
+                        </strong>
+
+                        ${fragrance.notes || "Not available"}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+    );
