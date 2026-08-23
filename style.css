@@ -15,19 +15,118 @@ body {
 }
 
 
-/* =========================
+/* =====================================================
+   TOP NAVIGATION
+===================================================== */
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 14px 30px;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #e5e1db;
+}
+
+.nav-logo {
+    font-family: Georgia, serif;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.nav-tabs {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    overflow-x: auto;
+}
+
+.nav-tab {
+    border: none;
+    background: transparent;
+
+    padding: 10px 15px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    white-space: nowrap;
+
+    opacity: 0.55;
+
+    transition:
+        background 0.2s ease,
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-tab:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+}
+
+.nav-tab.active {
+    opacity: 1;
+    background: #171717;
+    color: white;
+}
+
+
+/* =====================================================
+   TAB SYSTEM
+===================================================== */
+
+.tab-page {
+    display: none;
+}
+
+.tab-page.tab-active {
+    display: block;
+}
+
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
     min-height: 90vh;
+
     display: flex;
     align-items: center;
+
     padding: 80px 8%;
 
     background:
-        radial-gradient(circle at 80% 20%, #d9c8b5, transparent 35%),
-        linear-gradient(135deg, #f5f0e9, #ddd4c8);
+        radial-gradient(
+            circle at 80% 20%,
+            #d9c8b5,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f5f0e9,
+            #ddd4c8
+        );
 }
 
 .hero-content {
@@ -43,9 +142,13 @@ body {
 
 .hero h1 {
     font-family: Georgia, serif;
+
     font-size: clamp(55px, 9vw, 110px);
+
     line-height: 0.92;
+
     font-weight: 400;
+
     margin-bottom: 35px;
 }
 
@@ -55,28 +158,36 @@ body {
 
 .hero-description {
     max-width: 600px;
+
     font-size: 19px;
+
     line-height: 1.7;
+
     color: #555;
+
     margin-bottom: 40px;
 }
 
 
-/* =========================
+/* =====================================================
    MAIN BUTTONS
-========================= */
+===================================================== */
 
 .start-button,
 .find-button,
 .again-button {
     border: none;
+
     background: #171717;
+
     color: white;
 
     padding: 18px 30px;
 
     font-size: 12px;
+
     font-weight: bold;
+
     letter-spacing: 2px;
 
     cursor: pointer;
@@ -101,38 +212,46 @@ body {
 }
 
 
-/* =========================
+/* =====================================================
    FINDER
-========================= */
+===================================================== */
 
 .finder {
     max-width: 1100px;
+
     margin: auto;
+
     padding: 120px 25px;
 }
 
 .section-heading {
     text-align: center;
+
     max-width: 700px;
+
     margin: 0 auto 70px;
 }
 
 .section-heading h2 {
     font-family: Georgia, serif;
+
     font-size: clamp(40px, 6vw, 70px);
+
     font-weight: 400;
+
     margin-bottom: 20px;
 }
 
 .section-heading p {
     color: #666;
+
     line-height: 1.6;
 }
 
 
-/* =========================
+/* =====================================================
    QUESTIONS
-========================= */
+===================================================== */
 
 .question {
     margin-bottom: 65px;
@@ -140,27 +259,38 @@ body {
 
 .question > label {
     display: block;
+
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     margin-bottom: 25px;
 }
 
 .options {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(140px, 1fr)
+        );
+
     gap: 12px;
 }
 
 
-/* =========================
+/* =====================================================
    OPTION BUTTONS
-========================= */
+===================================================== */
 
 .option {
     min-height: 70px;
 
     border: 1px solid #cfc8bf;
+
     background: #fff;
+
     color: #171717;
 
     cursor: pointer;
@@ -175,23 +305,20 @@ body {
         box-shadow 0.15s ease;
 }
 
-
-/* Hover */
-
 .option:hover {
     border-color: #171717;
+
     transform: translateY(-2px);
 
     box-shadow:
         0 6px 15px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Selected */
-
 .option.active {
     background: #171717;
+
     color: white;
+
     border-color: #171717;
 
     transform: scale(0.97);
@@ -200,47 +327,49 @@ body {
         0 0 0 3px rgba(23, 23, 23, 0.15);
 }
 
-
-/* Actual click */
-
 .option:active {
     transform: scale(0.94);
 }
 
-
-/* Gender buttons */
-
 .gender-option {
     min-height: 100px;
+
     font-size: 18px;
 }
 
 .gender-option span {
     display: block;
+
     font-size: 30px;
+
     margin-bottom: 5px;
 }
 
 
-/* =========================
+/* =====================================================
    FIND BUTTON
-========================= */
+===================================================== */
 
 .find-button {
     display: block;
+
     margin: 80px auto 0;
+
     padding: 22px 45px;
+
     font-size: 13px;
 }
 
 
-/* =========================
+/* =====================================================
    RESULTS
-========================= */
+===================================================== */
 
 .results {
     max-width: 1100px;
+
     margin: auto;
+
     padding: 100px 25px;
 }
 
@@ -252,17 +381,24 @@ body {
     background: white;
 
     margin-bottom: 25px;
+
     padding: 35px;
 
     display: grid;
-    grid-template-columns: 120px 1fr auto;
+
+    grid-template-columns:
+        120px
+        1fr
+        auto;
 
     gap: 30px;
+
     align-items: center;
 
     border: 1px solid #e0dcd6;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.2s ease;
 }
 
 .result-card:hover {
@@ -271,33 +407,45 @@ body {
 
 .result-number {
     font-family: Georgia, serif;
+
     font-size: 45px;
+
     color: #aaa;
 }
 
 .result-info h3 {
     font-family: Georgia, serif;
+
     font-size: 30px;
+
     font-weight: 400;
+
     margin-bottom: 10px;
 }
 
 .result-info .type {
     font-size: 11px;
+
     letter-spacing: 2px;
+
     font-weight: bold;
+
     text-transform: uppercase;
+
     margin-bottom: 15px;
 }
 
 .result-info p {
     color: #666;
+
     line-height: 1.6;
 }
 
 .notes {
     margin-top: 15px;
+
     font-size: 13px;
+
     color: #555;
 }
 
@@ -307,114 +455,85 @@ body {
 
 .match-score strong {
     display: block;
+
     font-family: Georgia, serif;
+
     font-size: 42px;
 }
 
 .match-score span {
     font-size: 10px;
+
     letter-spacing: 2px;
+
     color: #777;
 }
 
 .again-button {
     display: block;
+
     margin: 50px auto 0;
 }
 
 
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    background: #171717;
-    color: white;
-
-    padding: 50px 25px;
-
-    text-align: center;
-}
-
-footer p:first-child {
-    font-family: Georgia, serif;
-    font-size: 25px;
-    margin-bottom: 15px;
-}
-
-.disclaimer {
-    color: #999;
-    font-size: 12px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    .hero {
-        padding: 60px 25px;
-    }
-
-    .hero h1 {
-        font-size: 58px;
-    }
-
-    .finder,
-    .results {
-        padding-top: 80px;
-        padding-bottom: 80px;
-    }
-
-    .result-card {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-
-    .result-number {
-        font-size: 30px;
-    }
-
-    .match-score {
-        text-align: left;
-    }
-}
 /* =====================================================
-   FRAGRANCE SEARCH
+   SEARCH
 ===================================================== */
 
+.search-page,
+.compare-section,
+.battle-section,
+.surprise-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 100px 25px;
+}
+
 .fragrance-search {
-    width: 90%;
+    width: 100%;
+
     max-width: 650px;
-    margin: 40px auto;
+
+    margin: 0 auto;
+
     text-align: center;
 }
 
 .fragrance-search h2 {
     margin-bottom: 8px;
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+
+    font-weight: 400;
 }
 
 .fragrance-search p {
     margin-bottom: 20px;
+
     opacity: 0.7;
 }
 
 #fragrance-search-input {
     width: 100%;
-    box-sizing: border-box;
 
     padding: 16px 20px;
 
     border: 1px solid #ddd;
+
     border-radius: 14px;
 
     font-size: 16px;
 
     outline: none;
 
-    transition: 0.2s ease;
+    background: white;
+
+    transition:
+        0.2s ease;
 }
 
 #fragrance-search-input:focus {
@@ -424,12 +543,10 @@ footer p:first-child {
         0 0 0 3px rgba(0, 0, 0, 0.08);
 }
 
-
-/* Search dropdown */
-
 #fragrance-search-results {
     width: 100%;
-    margin-top: 6px;
+
+    margin-top: 8px;
 
     text-align: left;
 
@@ -447,9 +564,6 @@ footer p:first-child {
     z-index: 20;
 }
 
-
-/* Individual result */
-
 .fragrance-search-result {
     padding: 14px 18px;
 
@@ -458,11 +572,13 @@ footer p:first-child {
     border-bottom: 1px solid #eee;
 
     display: flex;
+
     flex-direction: column;
 
     gap: 4px;
 
-    transition: 0.15s ease;
+    transition:
+        0.15s ease;
 }
 
 .fragrance-search-result:hover {
@@ -475,11 +591,9 @@ footer p:first-child {
 
 .fragrance-search-result span {
     font-size: 13px;
+
     opacity: 0.6;
 }
-
-
-/* Nothing found */
 
 .search-no-results {
     padding: 16px;
@@ -489,40 +603,25 @@ footer p:first-child {
     opacity: 0.6;
 }
 
+.compare-hint {
+    text-align: center;
 
-/* Searched fragrance */
+    font-size: 14px;
 
-.searched-fragrance-card {
-    padding: 30px;
-
-    border-radius: 18px;
-
-    background: white;
-
-    box-shadow:
-        0 8px 30px rgba(0, 0, 0, 0.08);
-
-    text-align: left;
-}
-
-.searched-fragrance-card h2 {
-    margin: 8px 0 15px;
-}
-
-.searched-fragrance-card .type {
-    font-size: 13px;
     opacity: 0.6;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+
+    margin-top: 10px;
 }
+
 
 /* =====================================================
-   SEARCHED FRAGRANCE CARD
+   SEARCHED FRAGRANCE
 ===================================================== */
 
 .searched-fragrance-card {
     max-width: 900px;
-    margin: 0 auto;
+
+    margin: 35px auto 0;
 
     background: white;
 
@@ -534,17 +633,19 @@ footer p:first-child {
         0 10px 35px rgba(0, 0, 0, 0.08);
 
     display: grid;
-    grid-template-columns: 320px 1fr;
+
+    grid-template-columns:
+        320px
+        1fr;
 }
-
-
-/* IMAGE AREA */
 
 .fragrance-image-placeholder {
     min-height: 420px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #f5f5f5;
@@ -556,14 +657,11 @@ footer p:first-child {
     padding: 30px;
 }
 
-
-/* INFORMATION */
-
 .searched-fragrance-content {
     padding: 40px;
 }
 
-.searched-fragrance-content .type {
+.searched-fragrance-card .type {
     font-size: 13px;
 
     text-transform: uppercase;
@@ -573,13 +671,17 @@ footer p:first-child {
     opacity: 0.6;
 }
 
-.searched-fragrance-content h2 {
+.searched-fragrance-card h2 {
+    margin: 10px 0 18px;
+
+    font-family: Georgia, serif;
+
     font-size: 32px;
 
-    margin: 10px 0 18px;
+    font-weight: 400;
 }
 
-.fragrance-description {
+.searched-fragrance-card > p {
     line-height: 1.7;
 
     opacity: 0.75;
@@ -588,91 +690,43 @@ footer p:first-child {
 }
 
 
-/* EXTRA INFO */
-
-.fragrance-details {
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 14px;
-}
-
-.detail-box {
-    padding: 16px;
-
-    background: #f7f7f7;
-
-    border-radius: 12px;
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 6px;
-}
-
-.detail-box strong {
-    font-size: 13px;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.5px;
-}
-
-.detail-box span {
-    line-height: 1.5;
-
-    opacity: 0.75;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .searched-fragrance-card {
-        grid-template-columns: 1fr;
-    }
-
-    .fragrance-image-placeholder {
-        min-height: 280px;
-    }
-
-    .searched-fragrance-content {
-        padding: 25px;
-    }
-
-    .searched-fragrance-content h2 {
-        font-size: 26px;
-    }
-    
 /* =====================================================
-   COMPARE SECTION
+   COMPARE
 ===================================================== */
 
 .compare-section {
-    width: 90%;
-    max-width: 1000px;
-    margin: 70px auto;
+    width: 100%;
 }
 
 .compare-slots {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
+
+    grid-template-columns:
+        1fr
+        80px
+        1fr;
+
     align-items: center;
+
     gap: 20px;
+
     margin-top: 30px;
 }
 
 .compare-slot {
     padding: 25px;
+
     border-radius: 18px;
+
     background: white;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.07);
 
     display: flex;
+
     flex-direction: column;
+
     gap: 7px;
 
     min-height: 90px;
@@ -680,7 +734,9 @@ footer p:first-child {
 
 .compare-slot span {
     font-size: 12px;
+
     text-transform: uppercase;
+
     opacity: 0.55;
 }
 
@@ -694,7 +750,9 @@ footer p:first-child {
 
 .compare-vs {
     text-align: center;
+
     font-weight: bold;
+
     opacity: 0.5;
 }
 
@@ -706,17 +764,24 @@ footer p:first-child {
     padding: 14px 28px;
 
     border: none;
+
     border-radius: 12px;
+
+    background: #171717;
+
+    color: white;
 
     cursor: pointer;
 
     font-weight: bold;
 
-    transition: 0.2s ease;
+    transition:
+        0.2s ease;
 }
 
 .compare-button:disabled {
     opacity: 0.35;
+
     cursor: not-allowed;
 }
 
@@ -724,18 +789,15 @@ footer p:first-child {
     transform: translateY(-2px);
 }
 
-
-/* =====================================================
-   COMPARISON RESULTS
-===================================================== */
-
 .compare-results {
     margin-top: 35px;
 }
 
 .comparison-card {
     background: white;
+
     border-radius: 22px;
+
     overflow: hidden;
 
     box-shadow:
@@ -744,7 +806,11 @@ footer p:first-child {
 
 .comparison-header {
     display: grid;
-    grid-template-columns: 1fr 80px 1fr;
+
+    grid-template-columns:
+        1fr
+        80px
+        1fr;
 
     align-items: center;
 
@@ -755,28 +821,35 @@ footer p:first-child {
 
 .comparison-header span {
     font-size: 12px;
+
     text-transform: uppercase;
+
     opacity: 0.55;
 }
 
 .comparison-header h3 {
     margin: 8px 0 0;
+
+    font-family: Georgia, serif;
+
     font-size: 22px;
+
+    font-weight: 400;
 }
 
 .comparison-vs-large {
     font-weight: bold;
+
     opacity: 0.5;
 }
 
-
-/* =====================================================
-   COMPARISON ROWS
-===================================================== */
-
 .comparison-row {
     display: grid;
-    grid-template-columns: 150px 1fr 1fr;
+
+    grid-template-columns:
+        150px
+        1fr
+        1fr;
 
     border-top: 1px solid #eee;
 
@@ -789,62 +862,171 @@ footer p:first-child {
 
 .comparison-row strong {
     font-size: 13px;
+
     text-transform: uppercase;
+
     opacity: 0.6;
 }
 
 
 /* =====================================================
-   MOBILE
+   BATTLE
 ===================================================== */
 
-@media (max-width: 700px) {
+.battle-container {
+    display: grid;
 
-    .compare-slots {
-        grid-template-columns: 1fr;
-    }
+    grid-template-columns:
+        1fr
+        70px
+        1fr;
 
-    .compare-vs {
-        padding: 5px;
-    }
+    align-items: center;
 
-    .comparison-header {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .comparison-vs-large {
-        order: 2;
-    }
-
-    .comparison-row {
-        grid-template-columns: 1fr;
-        gap: 8px;
-    }
-
-   .compare-hint {
-    text-align: center;
-    font-size: 14px;
-    opacity: 0.6;
-    margin-top: 10px; 
-
+    gap: 20px;
 }
 
-    
-    /* =====================================================
+.battle-card {
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+.battle-brand {
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    opacity: 0.55;
+}
+
+.battle-card h3 {
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+
+    margin: 15px 0;
+}
+
+.battle-card p {
+    color: #666;
+
+    line-height: 1.5;
+
+    min-height: 45px;
+}
+
+.battle-vs {
+    text-align: center;
+
+    font-weight: bold;
+
+    opacity: 0.5;
+}
+
+.battle-choice {
+    margin-top: 20px;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #171717;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition:
+        0.2s ease;
+}
+
+.battle-choice:hover {
+    transform: translateY(-2px);
+
+    background: #333;
+}
+
+.battle-result {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.battle-winner {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.battle-winner strong {
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+.battle-winner span {
+    opacity: 0.6;
+}
+
+.new-battle-button {
+    display: block;
+
+    margin: 25px auto 0;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition:
+        0.2s ease;
+}
+
+.new-battle-button:hover {
+    transform: translateY(-2px);
+
+    border-color: #171717;
+}
+
+
+/* =====================================================
    SURPRISE ME
 ===================================================== */
 
 .surprise-section {
-    width: 90%;
-
-    max-width: 900px;
-
-    margin: 80px auto;
-
     text-align: center;
 }
-
 
 .surprise-button {
     padding: 16px 32px;
@@ -853,27 +1035,35 @@ footer p:first-child {
 
     border-radius: 14px;
 
+    background: #171717;
+
+    color: white;
+
     cursor: pointer;
 
     font-size: 16px;
 
     font-weight: bold;
 
-    transition: 0.2s ease;
+    transition:
+        0.2s ease;
 }
-
 
 .surprise-button:hover {
     transform: translateY(-3px);
-}
 
+    background: #333;
+}
 
 .surprise-result {
     margin-top: 35px;
 }
 
-
 .surprise-card {
+    max-width: 700px;
+
+    margin: 0 auto;
+
     background: white;
 
     border-radius: 22px;
@@ -883,7 +1073,6 @@ footer p:first-child {
     box-shadow:
         0 10px 35px rgba(0, 0, 0, 0.08);
 }
-
 
 .surprise-brand {
     font-size: 12px;
@@ -895,13 +1084,15 @@ footer p:first-child {
     opacity: 0.55;
 }
 
-
 .surprise-card h3 {
+    font-family: Georgia, serif;
+
     font-size: 30px;
+
+    font-weight: 400;
 
     margin: 12px 0 15px;
 }
-
 
 .surprise-card p {
     opacity: 0.7;
@@ -909,9 +1100,147 @@ footer p:first-child {
     line-height: 1.6;
 }
 
-
 .surprise-notes {
     margin-top: 20px;
 
     font-size: 14px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #171717;
+
+    color: white;
+
+    padding: 50px 25px;
+
+    text-align: center;
+}
+
+footer p:first-child {
+    font-family: Georgia, serif;
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    color: #999;
+
+    font-size: 12px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    .top-nav {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        padding: 12px 15px;
+    }
+
+    .nav-logo {
+        text-align: center;
+    }
+
+    .nav-tabs {
+        justify-content: flex-start;
+    }
+
+    .hero {
+        min-height: 75vh;
+
+        padding: 60px 25px;
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+
+    .finder,
+    .results,
+    .search-page,
+    .compare-section,
+    .battle-section,
+    .surprise-section {
+        padding-top: 80px;
+
+        padding-bottom: 80px;
+    }
+
+    .result-card {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .result-number {
+        font-size: 30px;
+    }
+
+    .match-score {
+        text-align: left;
+    }
+
+    .searched-fragrance-card {
+        grid-template-columns: 1fr;
+    }
+
+    .fragrance-image-placeholder {
+        min-height: 280px;
+    }
+
+    .searched-fragrance-content {
+        padding: 25px;
+    }
+
+    .searched-fragrance-card h2 {
+        font-size: 26px;
+    }
+
+    .compare-slots {
+        grid-template-columns: 1fr;
+    }
+
+    .compare-vs {
+        padding: 5px;
+    }
+
+    .comparison-header {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .comparison-vs-large {
+        order: 2;
+    }
+
+    .comparison-row {
+        grid-template-columns: 1fr;
+
+        gap: 8px;
+    }
+
+    .battle-container {
+        grid-template-columns: 1fr;
+    }
+
+    .battle-vs {
+        padding: 5px;
+    }
+
 }
