@@ -5985,3 +5985,182 @@ function getScore(fragrance, category) {
     return fragrance.scores[category] + "/10";
 
 }
+
+/* =====================================================
+   FRAGRANCE BATTLE
+===================================================== */
+
+let battleFragrance1 = null;
+let battleFragrance2 = null;
+
+
+/* -----------------------------------------------------
+   START NEW BATTLE
+----------------------------------------------------- */
+
+function startNewBattle() {
+
+    if (!fragrances || fragrances.length < 2) {
+        return;
+    }
+
+
+    const firstIndex =
+        Math.floor(
+            Math.random() * fragrances.length
+        );
+
+
+    let secondIndex =
+        Math.floor(
+            Math.random() * fragrances.length
+        );
+
+
+    while (secondIndex === firstIndex) {
+
+        secondIndex =
+            Math.floor(
+                Math.random() * fragrances.length
+            );
+
+    }
+
+
+    battleFragrance1 =
+        fragrances[firstIndex];
+
+    battleFragrance2 =
+        fragrances[secondIndex];
+
+
+    displayBattle();
+
+}
+
+
+/* -----------------------------------------------------
+   DISPLAY BATTLE
+----------------------------------------------------- */
+
+function displayBattle() {
+
+    if (!battleFragrance1 || !battleFragrance2) {
+        return;
+    }
+
+
+    document.querySelector("#battle-brand-1")
+        .textContent =
+        battleFragrance1.brand;
+
+
+    document.querySelector("#battle-name-1")
+        .textContent =
+        battleFragrance1.name;
+
+
+    document.querySelector("#battle-description-1")
+        .textContent =
+        battleFragrance1.description || "";
+
+
+    document.querySelector("#battle-brand-2")
+        .textContent =
+        battleFragrance2.brand;
+
+
+    document.querySelector("#battle-name-2")
+        .textContent =
+        battleFragrance2.name;
+
+
+    document.querySelector("#battle-description-2")
+        .textContent =
+        battleFragrance2.description || "";
+
+
+    document.querySelector("#battle-result")
+        .innerHTML = "";
+
+}
+
+
+/* -----------------------------------------------------
+   CHOOSE WINNER
+----------------------------------------------------- */
+
+function chooseBattleWinner(fragrance) {
+
+    const result =
+        document.querySelector("#battle-result");
+
+
+    result.innerHTML = `
+
+        <div class="battle-winner">
+
+            🏆
+
+            <strong>
+                ${fragrance.name}
+            </strong>
+
+            <span>
+                wins this battle!
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+
+/* -----------------------------------------------------
+   BUTTON EVENTS
+----------------------------------------------------- */
+
+document
+    .querySelector("#battle-choice-1")
+    .addEventListener(
+        "click",
+        function() {
+
+            chooseBattleWinner(
+                battleFragrance1
+            );
+
+        }
+    );
+
+
+document
+    .querySelector("#battle-choice-2")
+    .addEventListener(
+        "click",
+        function() {
+
+            chooseBattleWinner(
+                battleFragrance2
+            );
+
+        }
+    );
+
+
+document
+    .querySelector("#new-battle-button")
+    .addEventListener(
+        "click",
+        function() {
+
+            startNewBattle();
+
+        }
+    );
+
+
+/* Start first battle */
+
+startNewBattle();
